@@ -1736,14 +1736,15 @@ If activatedMod <> ""
   End
 EndIf
 ;}
-; IDE Options = PureBasic 5.11 (Windows - x86)
-; CursorPosition = 17
+; IDE Options = PureBasic 5.31 (Windows - x86)
+; CursorPosition = 7
+; FirstLine = 514
 ; Folding = FgAIA9
 ; EnableThread
 ; EnableXP
-; UseIcon = kjefo84u.ico
-; Executable = C:\Dropbox\Арканум\arcanum launcher\0.6.0.0\release\launcher.exe
+; UseIcon = ico\icon.ico
+; Executable = C:\Dropbox\РђСЂРєР°РЅСѓРј\arcanum launcher\0.6.0.0\release\launcher.exe
 ; SubSystem = UserLibThreadSafe
-; CurrentDirectory = C:\Documents and Settings\vladgor\Рабочий стол\
+; CurrentDirectory = C:\Documents and Settings\vladgor\Р Р°Р±РѕС‡РёР№ СЃС‚РѕР»\
 ; EnableCompileCount = 1086
 ; EnableBuildCount = 469
