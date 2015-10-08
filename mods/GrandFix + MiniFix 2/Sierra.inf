@@ -1,0 +1,10 @@
+; SIERRA.INF
+; Created August 2001 - SJacobson 
+
+[Ident]
+PRODUCTID=71047
+COMPANYNAME=Troika_Games_LLC 
+VERSION=1.0.7.0
+PatchVersion=1.0.7.0
+TITLE=ARCANUM
+SHORTTITLE=AR_USENG

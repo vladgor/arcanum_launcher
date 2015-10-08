@@ -1,0 +1,1855 @@
+//
+// Spell EyeCandy Effect List:
+//
+
+// WARNING: NOTE: Palette numbers are 0-3 instead of 1-4!
+
+//  Each Spell has 4 lines of information (currently).  These are the Casting art,
+// the Projectile art (if it exists), the Destination (target) art, and 2ndary art
+// (Need to define that one better, I need to talk to Mike).
+
+// Each line consists of a sequence of descriptor fields.  These are:
+// Art: -- The Art # from the eyecandy.mes message file corresponding to this art
+// Palette: -- Which of the 4 palettes (currently 1-4, not 0-3) to use
+// Scale: -- What scale (25%-200%) to display the art at -- NOT CURRENTLY WORKING
+// Blend: -- Which of the various blending functions to use -- NOT CURRENTLY WORKING
+// Sound: -- The Sound #.  This is the same as the number which is prepended to the
+// .snd file in the sounds folder.
+// Flags: -- These specify various extra things:
+		// overlay_f -- the art is a foreground overlay
+		// overlay_b -- the art is a background overlay
+		// overlay_fb -- the art has both foreground and background overlays
+		// underlay -- the art is an underlay (flat under object)
+		// animates -- the art should animate once
+		// anim_forever -- the art should continuously loop animating
+// Light: -- the art # from the art\light\light.mes file
+// Light Color: (red @ green @ blue)
+// Proj Speed: <value>
+
+//  Note that there are 16 spell colleges with 80 base spells (player-castable)
+// as well as other, item-castable spells (these are hooked into magic-items)
+// at the end of the list.
+
+
+
+// College: [Conveyance] ------
+
+// 00 -- Disarm
+{0}{Art: 27, Palette: 1, Scale: 100%, Blend: Add, Sound: 9010, Flags: overlay_f | animates, Light: 1, Light Color:  (187 @ 0 @ 215)}	// Cast
+{1}{Art: 11, Palette: 1, Scale: 50%, Blend: Add, Sound: 9014, Flags: overlay_f | animates, Light: 1, Light Color:  (187 @ 0 @ 215)}		// Projectile
+{2}{Art: 15, Palette: 1, Scale: 100%, Blend: Add, Sound: Flags: overlay_fb | animates, Light: 1, Light Color:  (187 @ 0 @ 215)}	// Destination
+{3}{}		// Secondary Destination
+{4}{}		// Secondary Casting
+
+// 01 -- Unlocking Cantrip
+{10}{Art: 10, Palette: 1, Scale: 75%, Blend: Add, Sound: 9020, Flags: overlay_fb | animates, Light: 1, Light Color:  (187 @ 0 @ 215)}	// Cast
+{11}{}	// Projectile
+{12}{Art: 16, Palette: 1, Scale: 100%, Blend: Add, Sound: 9025, Flags: overlay_f | animates, Light: 1, Light Color:  (187 @ 0 @ 215)}	// Destination
+{13}{}	// Secondary Destination
+{14}{}	// Secondary Casting
+
+// 02 -- Unseen Force
+{20}{Art: 27, Palette: 1, Scale: 100%, Blend: Add, Sound: 9010, Flags: overlay_f | animates, Light: 1, Light Color:  (187 @ 0 @ 215)}	// Cast
+{21}{Art: 11, Palette: 1, Scale: 50%, Blend: Add, Sound: 9014, Flags: overlay_f | animates, Light: 1, Light Color:  (187 @ 0 @ 215)}		// Projectile
+{22}{Art: 15, Palette: 1, Scale: 100%, Blend: Add, Sound: 9015, Flags: overlay_fb | animates, Light: 1, Light Color:  (187 @ 0 @ 215)}	// Destination
+{23}{}	// Secondary Destination
+{24}{}	// Secondary Casting
+
+// 03 -- Spatial Distortion
+{30}{Art: 10, Palette: 1, Scale: 100%, Blend: Add, Sound: 9040, Flags: overlay_fb | animates, Light: 1, Light Color:  (187 @ 0 @ 215)}	// Cast
+{31}{}	// Projectile
+{32}{Art: 22, Palette: 1, Scale: 100%, Blend: Add, Sound: 9045, Flags: overlay_f | animates, Light: 1, Light Color:  (187 @ 0 @ 215)}	// Destination
+{33}{}	// Secondary Destination
+{34}{}	// Secondary Casting
+
+// 04 -- Teleportation
+{40}{Art: 25, Palette: 1, Scale: 100%, Blend: Add, Sound: 9053, Flags: overlay_fb | animates, Light: 1, Light Color:  (187 @ 0 @ 215)}	// Cast
+{41}{}	// Projectile
+{42}{Art: 25, Palette: 1, Scale: 100%, Blend: Add, Sound: 9053, Flags: overlay_fb | animates, Light: 1, Light Color:  (187 @ 0 @ 215)}	// Destination
+{43}{}	// Secondary Destination
+{44}{}	// Secondary Casting
+
+
+// College: [Divination] ------
+
+// 05 -- Sense Magic
+{50}{Art: 28, Palette: 1, Scale: 75%, Blend: Add, Sound: 10010, Flags: overlay_f | animates, Light: 1, Light Color:  (150 @ 150 @ 150)}	// Cast
+{51}{}	// Projectile
+{52}{}	// Destination
+{53}{}	// Secondary Destination
+{54}{}	// Secondary Casting
+
+// 06 -- See Contents
+{60}{Art: 28, Palette: 1, Scale: 75%, Blend: Add, Sound: 10020, Flags: overlay_f | animates, Light: 1, Light Color:  (150 @ 150 @ 150)}	// Cast
+{61}{}	// Projectile
+{62}{Art: 35, Palette: 1, Scale: 100%, Blend: Add, Flags: underlay | animates, Light: 1, Light Color:  (150 @ 150 @ 150)}	// Destination
+{63}{Art: 35, Palette: 1, Scale: 100%, Blend: Add, Flags: underlay | animates | anim_forever}	// Secondary Destination
+{64}{}	// Secondary Casting
+
+// 07 -- Read Aura
+{70}{Art: 28, Palette: 1, Scale: 100%, Blend: Add, Sound: 10035, Flags: overlay_f | animates, Light: 1, Light Color:  (150 @ 150 @ 150)}	// Cast
+{71}{}	// Projectile
+{72}{}	// Destination
+{73}{}	// Secondary Destination
+{74}{}	// Secondary Casting
+
+// 08 -- Sense Hidden
+{80}{Art: 28, Palette: 1, Scale: 100%, Blend: Add, Sound: 10040, Flags: overlay_f | animates, Light: 1, Light Color:  (150 @ 150 @ 150)}	// Cast
+{81}{}	// Projectile
+{82}{Art: 41, Palette: 1, Scale: 100%, Blend: Add, Flags: overlay_f | animates, Light: 1, Light Color:  (150 @ 150 @ 150)}	// Destination
+{83}{}	// Secondary Destination
+{84}{}	// Secondary Casting
+
+// 09 -- Divine Magic
+{90}{Art: 28, Palette: 1, Scale: 125%, Blend: Add, Sound: 10055, Flags: overlay_f | animates, Light: 1, Light Color:  (150 @ 150 @ 150)}	// Cast
+{91}{}	// Projectile
+{92}{}	// Destination
+{93}{}	// Secondary Destination
+{94}{}	// Secondary Casting
+
+
+// College: [Air] ------
+
+// 10 -- Vitality of Air
+{100}{Art: 47, Palette: 1, Scale: 50%, Blend: Add, Sound: 11010, Flags: overlay_fb | animates, Light: 1, Light Color:  (108 @ 238 @ 242)}	// Cast
+{101}{}	// Projectile
+{102}{Art: 362, Palette: 1, Scale: 100%, Blend: Add, Sound: 11015, Flags: overlay_f | animates | anim_forever}	// Destination
+{103}{}	// Secondary Destination
+{104}{}	// Secondary Casting
+
+// 11 -- Poison Vapours
+{110}{Art: 68, Palette: 1, Scale: 75%, Blend: Add, Sound: 11020, Flags: overlay_f | animates, Light: 1, Light Color:  (108 @ 238 @ 242)}	// Cast
+{111}{}	// Projectile
+{112}{Art: 55, Palette: 1, Scale: 100%, Blend: Add, Sound: 11025, Flags: overlay_f | animates}	// Destination
+{113}{Art: 55, Palette: 1, Scale: 100%, Blend: Add, Flags: overlay_f | animates | anim_forever}	// Secondary Destination
+{114}{}	// Secondary Casting
+
+// 12 -- Call Winds
+{120}{Art: 68, Palette: 1, Scale: 100%, Blend: Add, Sound: 11030, Flags: overlay_f | animates, Light: 1, Light Color:  (108 @ 238 @ 242)}	// Cast
+{121}{}	// Projectile
+{122}{Art: 48, Palette: 1, Scale: 100%, Blend: Add, Sound: 11035, Flags: overlay_fb | animates, Light: 1, Light Color:  (108 @ 238 @ 242)}	// Destination
+{123}{}	// Secondary Destination
+{124}{}	// Secondary Casting
+
+// 13 -- Body of Air
+{130}{Art:47, Palette: 1, Scale: 100%, Blend: Add, Sound: 11040, Flags: overlay_fb | animates, Light: 1, Light Color:  (108 @ 238 @ 242)}	// Cast
+{131}{}	// Projectile
+{132}{Art: 59, Palette: 1, Scale: 100%, Blend: Add, Sound: 11045, Flags: overlay_f | animates, Light: 1, Light Color:  (108 @ 238 @ 242)}	// Destination
+{133}{}	// Secondary Destination
+{134}{}	// Secondary Casting
+
+// 14 -- Call Air Elemental
+{140}{Art: 47, Palette: 1, Scale: 125%, Blend: Add, Sound: 11050, Flags: overlay_fb | animates, Light: 1, Light Color:  (108 @ 238 @ 242)}	// Cast
+{141}{}	// Projectile
+{142}{Art: 59, Palette: 1, Scale: 100%, Blend: Add, Sound: 11058, Flags: overlay_f | animates, Light: 1, Light Color:  (108 @ 238 @ 242)}	// Destination
+{143}{}	// Secondary Destination
+{144}{}	// Secondary Casting
+
+
+// College: [Earth] ------
+
+// 15 -- Strength of Earth
+{150}{Art: 69, Palette: 1, Scale: 75%, Blend: Add, Sound: 12010, Flags: overlay_fb | animates, Light: 1, Light Color:  (201 @ 164 @ 64)}	// Cast
+{151}{}	// Projectile
+{152}{Art: 363, Palette: 1, Scale: 100%, Blend: Add, Sound: 12015, Flags: overlay_f | animates | anim_forever}	// Destination
+{153}{}	// Secondary Destination
+{154}{}	// Secondary Casting
+
+// 16 -- Stone Throw
+{160}{Art: 90, Palette: 1, Scale: 75%, Blend: Add, Sound: 12020, Flags: overlay_f | animates, Light: 1, Light Color:  (201 @ 164 @ 64)}	// Cast
+{161}{Art: 70, Palette: 1, Scale: 75%, Blend: Add, Sound: 12024, Flags: overlay_f | animates, Light: 1, Light Color:  (201 @ 164 @ 64)}	// Projectile
+{162}{Art: 74, Palette: 1, Scale: 100%, Blend: None, Sound: 12025, Flags: overlay_f | animates, Light: 1, Light Color:  (201 @ 164 @ 64)}	// Destination
+{163}{}	// Secondary Destination
+{164}{}	// Secondary Casting
+
+// 17 -- Wall of Stone
+{170}{Art: 90, Palette: 1, Scale: 100%, Blend: Add, Sound: 12030, Flags: overlay_f | animates, Light: 1, Light Color:  (201 @ 164 @ 64)}	// Cast
+{171}{}	// Projectile
+// OLD Eye-candy based wall of stone
+//-172--Art: 76, Palette: 1, Scale: 100%, Blend: None, Sound: 12035, Flags: overlay_f | animates, Light: 1, Light Color:  (0 @ 96 @ 204)-	// Destination
+//-173--Art: 77, Palette: 1, Scale: 100%, Blend: None, Flags: overlay_f | animates | anim_forever-	// Secondary Destination
+{172}{}	// Destination
+{173}{}	// Secondary Destination
+{174}{}	// Secondary Casting
+
+// 18 -- Body of Stone
+{180}{Art: 69, Palette: 1, Scale: 100%, Blend: Add, Sound: 12040, Flags: overlay_fb | animates, Light: 1, Light Color:  (201 @ 164 @ 64)}	// Cast
+{181}{}	// Projectile
+{182}{Art: 85, Palette: 1, Scale: 100%, Blend: Add, Sound: 12045, Flags: overlay_fb | animates, Light: 1, Light Color:  (201 @ 164 @ 64)}	// Destination
+{183}{}	// Secondary Destination
+{184}{}	// Secondary Casting
+
+// 19 -- Call Earth Elemental
+{190}{Art: 69, Palette: 1, Scale: 125%, Blend: Add, Sound: 12050, Flags: overlay_fb | animates, Light: 1, Light Color:  (201 @ 164 @ 64)}	// Cast
+{191}{}	// Projectile
+{192}{Art: 85, Palette: 1, Scale: 100%, Blend: Add, Sound: 12055, Flags: overlay_fb | animates, Light: 1, Light Color:  (201 @ 164 @ 64)}	// Destination
+{193}{}	// Secondary Destination
+{194}{}	// Secondary Casting
+
+
+// College: [Fire] ------
+
+// 20 -- Agility of Fire
+{200}{Art: 91, Palette: 1, Scale: 75%, Blend: Add, Sound: 13010, Flags: overlay_fb | animates, Light: 1, Light Color:  (242 @ 165 @ 0)}	// Cast
+{201}{}	// Projectile
+{202}{Art: 364, Palette: 1, Scale: 100%, Blend: Add, Sound: 13015, Flags: overlay_f | animates | anim_forever}	// Destination
+{203}{}	// Secondary Destination
+{204}{}	// Secondary Casting
+
+// 21 -- Wall of Fire
+{210}{Art: 114, Palette: 1, Scale: 75%, Blend: Add, Sound: 13020, Flags: overlay_f | animates, Light: 1, Light Color:  (242 @ 165 @ 0)}	// Cast
+{211}{}	// Projectile
+// OLD Eye-candy based wall of fire...NOTE: Mike, if you change this one, change the Explode Fire (Fire Obstruction Tech Item) as well!
+//-212--Art: 95, Palette: 1, Scale: 100%, Blend: Add, Sound: 13025, Flags: overlay_fb | animates, Light: 1, Light Color:  (0 @ 96 @ 204)-	// Destination
+//-213--Art: 96, Palette: 1, Scale: 100%, Blend: Add, Flags: overlay_fb | animates | anim_forever, Light: 1, Light Color:  (0 @ 96 @ 204)-	// Secondary Destination
+{212}{}	// Destination
+{213}{}	// Secondary Destination
+{214}{}	// Secondary Casting
+
+// 22 -- Fireflash
+{220}{Art: 114, Palette: 1, Scale: 100%, Blend: Add, Sound: 13030, Flags: overlay_f | animates, Light: 1, Light Color:   (242 @ 165 @ 0)}	// Cast
+{221}{Art: 99, Palette: 1, Scale: 100%, Blend: Add, Sound: 13034, Flags: overlay_f | animates, Light: 1, Light Color:   (242 @ 165 @ 0), Proj Speed: 4}	// Projectile
+{222}{Art: 98, Palette: 1, Scale: 100%, Blend: Add, Sound: 13035, Flags: overlay_f | animates, Light: 1, Light Color:   (242 @ 165 @ 0)}	// Destination
+// Smoke Effect: Note that this is used from code in several places, so if this changes, need to change there TOO!
+{223}{Art: 349, Palette: 1, Scale: 100%, Blend: Add, Flags: overlay_f | animates}	// Secondary Destination
+{224}{}			// Secondary Casting
+
+// 23 -- Body of Fire
+{230}{Art: 91, Palette: 1, Scale: 125%, Blend: Add, Sound: 13040, Flags: overlay_fb | animates, Light: 1, Light Color:   (242 @ 165 @ 0)}	// Cast
+{231}{}	// Projectile
+{232}{Art: 105, Palette: 1, Scale: 100%, Blend: Add, Sound: 13045, Flags: overlay_f | animates, Light: 1, Light Color:   (242 @ 165 @ 0)}	// Destination
+{233}{}	// Secondary Destination
+{234}{}	// Secondary Casting
+
+// 24 -- Call Fire Elemental
+{240}{Art: 91, Palette: 1, Scale: 150%, Blend: Add, Sound: 13050, Flags: overlay_fb | animates, Light: 1, Light Color:   (242 @ 165 @ 0)}	// Cast
+{241}{}	// Projectile
+{242}{Art: 105, Palette: 1, Scale: 100%, Blend: Add, Sound: 13055, Flags: overlay_f | animates, Light: 1, Light Color:   (242 @ 165 @ 0)}	// Destination
+{243}{}	// Secondary Destination
+{244}{}	// Secondary Casting
+
+
+// College: [Water] ------
+
+// 25 -- Purity of Water
+{250}{Art: 115, Palette: 1, Scale: 75%, Blend: Add, Sound: 14010, Flags: overlay_fb | animates, Light: 1, Light Color:  (0 @ 96 @ 204)}	// Cast
+{251}{}	// Projectile
+{252}{Art: 365, Palette: 1, Scale: 100%, Blend: Add, Sound: 14015, Flags: overlay_f | animates | anim_forever}	// Destination
+{253}{}	// Secondary Destination
+{254}{}	// Secondary Casting
+
+// 26 -- Call Fog
+{260}{Art: 135, Palette: 1, Scale: 75%, Blend: Add, Sound: 14020, Flags: overlay_f | animates, Light: 1, Light Color:  (0 @ 96 @ 204)}	// Cast
+{261}{}	// Projectile
+{262}{Art: 116, Palette: 1, Scale: 100%, Blend: Add, Sound: 14025, Flags: overlay_f | animates, Light: 1, Light Color:  (0 @ 96 @ 204)}	// Destination
+{263}{Art: 117, Palette: 1, Scale: 100%, Blend: Add, Flags: overlay_f | animates | anim_forever, Light: 1, Light Color:  (0 @ 96 @ 204)}	// Secondary Destination
+{264}{}	// Secondary Casting
+
+// 27 -- Squall of Ice
+{270}{Art: 135, Palette: 1, Scale: 100%, Blend: Add, Sound: 14030, Flags: overlay_f | animates, Light: 1, Light Color:  (0 @ 96 @ 204)}	// Cast
+{271}{}	// Projectile
+{272}{Art: 123, Palette: 1, Scale: 100%, Blend: Add, Sound: 14035, Flags: overlay_f | animates, Light: 1, Light Color:  (0 @ 96 @ 204)}	// Destination
+{273}{Art: 124, Palette: 1, Scale: 100%, Blend: Add, Flags: overlay_f | animates | anim_forever, Light: 1, Light Color:  (0 @ 96 @ 204)}	// Secondary Destination
+{274}{}	// Secondary Casting
+
+// 28 -- Body of Water
+{280}{Art: 115, Palette: 1, Scale: 100%, Blend: Add, Sound: 14040, Flags: overlay_fb | animates, Light: 1, Light Color:  (0 @ 96 @ 204)}	// Cast
+{281}{}	// Projectile
+{282}{Art: 126, Palette: 1, Scale: 100%, Blend: Add, Sound: 14045, Flags: overlay_f | animates, Light: 1, Light Color:  (0 @ 96 @ 204)}	// Destination
+{283}{}	// Secondary Destination
+{284}{}	// Secondary Casting
+
+// 29 -- Call Water Elemental
+{290}{Art: 115, Palette: 1, Scale: 125%, Blend: Add, Sound: 14050, Flags: overlay_fb | animates, Light: 1, Light Color:  (0 @ 96 @ 204)}	// Cast
+{291}{}	// Projectile
+{292}{Art: 126, Palette: 1, Scale: 100%, Blend: Add, Sound: 14055, Flags: overlay_f | animates, Light: 1, Light Color:  (0 @ 96 @ 204)}	// Destination
+{293}{Art: 9, Palette: 1, Scale: 100%, Blend: Add, Flags: overlay_f | animates, Light: 1, Light Color:  (0 @ 96 @ 204)}	// Secondary Destination
+{294}{}			// Secondary Casting
+
+
+// College: [Force] ------
+
+// 30 -- Shield of Protection
+{300}{Art: 159, Palette: 1, Scale: 75%, Blend: Add, Sound: 15010, Flags: overlay_f | animates, Light: 1}	// Cast
+{301}{}	// Projectile
+{302}{Art: 137, Palette: 1, Scale: 100%, Blend: Add, Sound: 15015, Flags: overlay_f | animates, Light: 1}	// Destination
+{303}{Art: 138, Palette: 1, Scale: 100%, Blend: Add, Flags: overlay_f | animates | anim_forever}	// Secondary Destination
+{304}{}	// Secondary Casting
+{305}{Art: 139, Palette: 1, Scale: 100%, Blend: Add, Sound: 15020, Flags: overlay_f | animates}	// Damage FX
+
+// 31 -- Jolt
+{310}{Art: 159, Palette: 1, Scale: 75%, Blend: Add, Sound: 15020, Flags: overlay_f | animates, Light: 1}	// Cast
+{311}{}	// Projectile
+{312}{Art: 141, Palette: 1, Scale: 100%, Blend: Add, Flags: overlay_fb | animates, Light: 1}	// Destination
+{313}{Art: 349, Palette: 1, Scale: 100%, Blend: Add, Flags: overlay_f | animates}	// Secondary Destination
+{314}{}	// Secondary Casting
+
+// 32 -- Wall of Force
+{320}{Art: 159, Palette: 1, Scale: 100%, Blend: Add, Sound: 15030, Flags: overlay_f | animates, Light: 1}	// Cast
+{321}{}	// Projectile
+// OLD Eye-candy based wall of force
+//-322--Art: 143, Palette: 1, Scale: 100%, Blend: Add, Sound: 15035,  Flags: overlay_f | animates, Light: 1, Light Color:  (255 @ 255 @ 255)-	// Destination
+//-323--Art: 144, Palette: 1, Scale: 100%, Blend: Add, Flags: overlay_f | animates | anim_forever, Light: 1, Light Color:  (255 @ 255 @ 255)-	// Secondary Destination
+{322}{}	// Destination
+{323}{}	// Secondary Destination
+{324}{}	// Secondary Casting
+
+// 33 -- Bolt of Lightning
+{330}{Art: 159, Palette: 1, Scale: 125%, Blend: Add, Sound: 15040, Flags: overlay_f | animates, Light: 1}	// Cast
+{331}{Art: 146, Palette: 1, Scale: 100%, Blend: Add, Sound: 15044, Flags: overlay_f | animates, Light: 1}	// Projectile
+{332}{Art: 150, Palette: 1, Scale: 100%, Blend: Add, Sound: 15045, Flags: overlay_fb | animates, Light: 8}	// Destination
+{333}{Art: 349, Palette: 1, Scale: 100%, Blend: Add, Flags: overlay_f | animates}	// Secondary Destination
+{334}{}			// Secondary Casting
+
+// 34 -- Disintegrate
+{340}{Art: 136, Palette: 1, Scale: 125%, Blend: Add, Sound: 15050, Flags: overlay_fb | animates, Light: 1}	// Cast
+{341}{Art: 154, Palette: 1, Scale: 100%, Blend: Add, Sound: 15054, Flags: overlay_f | animates, Light: 8}	// Projectile
+{342}{Art: 158, Palette: 1, Scale: 100%, Blend: Add, Sound: 15055, Flags: overlay_f | animates, Light: 8}	// Destination
+{343}{}	// Secondary Destination
+{344}{}	// Secondary Casting
+
+
+// College: [Mental] ------
+
+// 35 -- Charm
+{350}{Art: 160, Palette: 1, Scale: 75%, Blend: Add, Sound: 16010, Flags: overlay_fb | animates, Light: 1, Light Color:  (111 @ 181 @ 116)}	// Cast
+{351}{}	// Projectile
+{352}{Art: 161, Palette: 1, Scale: 100%, Blend: Add, Sound: 16015, Flags: overlay_fb | animates, Light: 1, Light Color:  (111 @ 181 @ 116)}	// Destination
+{353}{Art: 161, Palette: 1, Scale: 100%, Blend: Add, Flags: overlay_fb | animates | anim_forever}	// Secondary Destination
+{354}{}	// Secondary Casting
+
+// 36 -- Stun
+{360}{Art: 175, Palette: 1, Scale: 75%, Blend: Add, Sound: 16020, Flags: overlay_f | animates, Light: 1, Light Color:  (111 @ 181 @ 116)}	// Cast
+{361}{}	// Projectile
+{362}{Art: 164, Palette: 1, Scale: 100%, Blend: Add, Sound: 16025, Flags: overlay_fb | animates, Light: 1, Light Color:  (111 @ 181 @ 116)}	// Destination
+{363}{}	// Secondary Destination
+{364}{}	// Secondary Casting
+
+// 37 -- Drain Will (WAS Stupefy)
+{370}{Art: 175, Palette: 1, Scale: 100%, Blend: Add, Sound: 16030, Flags: overlay_f | animates, Light: 1, Light Color:  (111 @ 181 @ 116)}	// Cast
+{371}{}	// Projectile
+{372}{Art: 167, Palette: 1, Scale: 100%, Blend: Add, Sound: 16035, Flags: overlay_fb | animates, Light: 1, Light Color:  (111 @ 181 @ 116)}	// Destination
+{373}{}	// Secondary Destination
+{374}{}	// Secondary Casting
+
+// 38 -- Nightmare
+{380}{Art: 160, Palette: 1, Scale: 100%, Blend: Add, Sound: 16040, Flags: overlay_fb | animates, Light: 1, Light Color:  (111 @ 181 @ 116)}	// Cast
+{381}{}	// Projectile
+{382}{Art: 170, Palette: 1, Scale: 100%, Blend: Add, Sound: 16045, Flags: overlay_fb | animates, Light: 1, Light Color:  (111 @ 181 @ 116)}	// Destination
+{383}{}	// Secondary Destination
+{384}{}	// Secondary Casting
+
+// 39 -- Dominate Will
+{390}{Art: 160, Palette: 1, Scale: 125%, Blend: Add, Sound: 16050, Flags: overlay_fb | animates, Light: 1, Light Color:  (111 @ 181 @ 116)}	// Cast
+{391}{}	// Projectile
+{392}{Art: 173, Palette: 1, Scale: 100%, Blend: Add, Sound: 16055, Flags: overlay_fb | animates, Light: 1, Light Color:  (111 @ 181 @ 116)}	// Destination
+{393}{Art: 174, Palette: 1, Scale: 100%, Blend: Add, Flags: overlay_fb | animates | anim_forever}	// Secondary Destination
+{394}{}	// Secondary Casting
+
+
+// College: [Meta] ------
+
+// 40 -- Resist Magic
+{400}{Art: 176, Palette: 1, Scale: 50%, Blend: Add, Sound: 17010, Flags: overlay_fb | animates, Light: 1, Light Color:  (255 @ 141 @ 241)}	// Cast
+{401}{}	// Projectile
+{402}{Art: 177, Palette: 1, Scale: 100%, Blend: Add, Sound: 17015, Flags: overlay_fb | animates, Light: 1, Light Color:  (255 @ 141 @ 241)}	// Destination
+{403}{Art: 178, Palette: 1, Scale: 100%, Blend: Add, Flags: overlay_f | animates | anim_forever}	// Secondary Destination
+{404}{}	// Secondary Casting
+
+// 41 -- Disperse Magic
+{410}{Art: 176, Palette: 1, Scale: 50%, Blend: Add, Sound: 17020, Flags: overlay_fb | animates, Light: 1, Light Color:  (255 @ 141 @ 241)}	// Cast
+{411}{}	// Projectile
+{412}{Art: 180, Palette: 1, Scale: 100%, Blend: Add, Sound: 17025, Flags: overlay_fb | animates, Light: 1, Light Color:  (255 @ 141 @ 241)}	// Destination
+{413}{}	// Secondary Destination
+{414}{}	// Secondary Casting
+
+// 42 -- Dweomer Shield
+{420}{Art: 176, Palette: 1, Scale: 75%, Blend: Add, Sound: 17030, Flags: overlay_fb | animates, Light: 1, Light Color:  (255 @ 141 @ 241)}	// Cast
+{421}{}	// Projectile
+{422}{Art: 183, Palette: 1, Scale: 100%, Blend: Add, Sound: 17035, Flags: overlay_fb | animates, Light: 1, Light Color:  (255 @ 141 @ 241)}	// Destination
+{423}{Art: 184, Palette: 1, Scale: 100%, Blend: Add, Flags: overlay_f | animates | anim_forever}	// Secondary Destination
+{424}{}	// Secondary Casting
+
+// 43 --  Bonds of Force
+{430}{Art: 176, Palette: 1, Scale: 75%, Blend: Add, Sound: 17040, Flags: overlay_fb | animates, Light: 1, Light Color:  (255 @ 141 @ 241)}	// Cast
+{431}{}	// Projectile
+{432}{Art: 191, Palette: 1, Scale: 100%, Blend: Add, Sound: 17045, Flags: overlay_f | animates, Light: 1, Light Color:  (255 @ 141 @ 241)}	// Destination
+{433}{Art: 192, Palette: 1, Scale: 100%, Blend: Add, Flags: overlay_f | animates | anim_forever}	// Secondary Destination
+{434}{}	// Secondary Casting
+
+// 44 -- Reflection Shield
+{440}{Art: 176, Palette: 1, Scale: 100%, Blend: Add, Sound: 17050, Flags: overlay_fb | animates, Light: 1, Light Color:  (255 @ 141 @ 241)}	// Cast
+{441}{}	// Projectile
+{442}{Art: 187, Palette: 1, Scale: 100%, Blend: Add, Sound: 17055, Flags: overlay_fb | animates, Light: 1, Light Color:  (255 @ 141 @ 241)}	// Destination
+{443}{Art: 188, Palette: 1, Scale: 100%, Blend: Add, Flags: overlay_fb | animates | anim_forever}	// Secondary Destination
+{444}{}	// Secondary Casting
+
+
+// College: [Morph] ------
+
+// 45 -- Hardened Hands
+{450}{Art: 195, Palette: 1, Scale: 75%, Blend: Add, Sound: 18010, Flags: overlay_fb | animates, Light: 1, Light Color:  (150 @ 150 @ 150)}	// Cast
+{451}{}	// Projectile
+{452}{}	// Destination
+{453}{}	// Secondary Destination
+{454}{}	// Secondary Casting
+
+// 46 -- Weaken
+{460}{Art: 195, Palette: 1, Scale: 75%, Blend: Add, Sound: 18020, Flags: overlay_fb | animates, Light: 1, Light Color:  (150 @ 150 @ 150)}	// Cast
+{461}{}	// Projectile
+{462}{Art: 196, Palette: 1, Scale: 100%, Blend: Add, Sound: 18025, Flags: overlay_fb | animates, Light: 1, Light Color:  (150 @ 150 @ 150)}	// Destination
+{463}{Art: 196, Palette: 1, Scale: 100%, Blend: Add, Flags: overlay_fb | animates | anim_forever}	// Secondary Destination
+{464}{}	// Secondary Casting
+
+// 47 -- Shrink
+{470}{Art: 195, Palette: 1, Scale: 100%, Blend: Add, Sound: 18040, Flags: overlay_fb | animates, Light: 1, Light Color:  (150 @ 150 @ 150)}	// Cast
+{471}{}	// Projectile
+{472}{Art: 205, Palette: 1, Scale: 100%, Blend: Add, Sound: 18045, Flags: overlay_f | animates, Light: 1, Light Color:  (150 @ 150 @ 150)}	// Destination
+{473}{}	// Secondary Destination
+{474}{}	// Secondary Casting
+
+// 48 -- Flesh to Stone
+{480}{Art: 195, Palette: 1, Scale: 100%, Blend: Add, Sound: 18030, Flags: overlay_fb | animates, Light: 1, Light Color:  (150 @ 150 @ 150)}	// Cast
+{481}{}	// Projectile
+{482}{Art: 202, Palette: 1, Scale: 100%, Blend: Add, Sound: 18035, Flags: overlay_f | animates, Light: 1, Light Color:  (150 @ 150 @ 150)}	// Destination
+{483}{}	// Secondary Destination
+{484}{}	// Secondary Casting
+
+// 49 -- Polymorph Other
+{490}{Art: 195, Palette: 1, Scale: 125%, Blend: Add, Sound: 18050, Flags: overlay_fb | animates, Light: 1, Light Color:  (150 @ 150 @ 150)}	// Cast
+{491}{}	// Projectile
+{492}{Art: 205, Palette: 1, Scale: 100%, Blend: Add, Sound: 18055, Flags: overlay_f | animates, Light: 1, Light Color:  (150 @ 150 @ 150)}	// Destination
+{493}{}	// Secondary Destination
+{494}{}	// Secondary Casting
+
+
+// College: [Nature] ------
+
+// 50 -- Charm Beast
+{500}{Art: 211, Palette: 1, Scale: 75%, Blend: Add, Sound: 19020, Flags: overlay_fb | animates, Light: 1, Light Color:  (0 @ 182 @ 25)}	// Cast
+{501}{}	// Projectile
+{502}{Art: 215, Palette: 1, Scale: 100%, Blend: Add, Sound: 19025, Flags: overlay_f | animates, Light: 1, Light Color:  (0 @ 182 @ 25)}	// Destination
+{503}{}	// Secondary Destination
+{504}{}	// Secondary Casting
+
+// 51 -- Entangle
+{510}{Art: 234, Palette: 1, Scale: 100%, Blend: Add, Sound: 19010, Flags: overlay_f | animates, Light: 1, Light Color:  (0 @ 182 @ 25)}	// Cast
+{511}{}	// Projectile
+{512}{Art: 212, Palette: 1, Scale: 100%, Blend: Add, Sound: 19015, Flags: overlay_fb | animates, Light: 1, Light Color:  (0 @ 182 @ 25)}	// Destination
+{513}{Art: 213, Palette: 1, Scale: 100%, Blend: Add, Flags: overlay_fb | animates | anim_forever, Light: 1, Light Color:  (0 @ 182 @ 25)}	// Secondary Destination
+{514}{}	// Secondary Casting
+
+// 52 -- Control Beast
+{520}{Art: 211, Palette: 1, Scale: 100%, Blend: Add, Sound: 19030, Flags: overlay_fb | animates, Light: 1, Light Color:  (0 @ 182 @ 25)}	// Cast
+{521}{}	// Projectile
+{522}{Art: 218, Palette: 1, Scale: 100%, Blend: Add, Sound: 19035, Flags: overlay_f | animates, Light: 1, Light Color:  (0 @ 182 @ 25)}	// Destination
+{523}{Art: 219, Palette: 1, Scale: 100%, Blend: Add, Flags: overlay_f | animates | anim_forever, Light: 1, Light Color:  (0 @ 182 @ 25)}	// Secondary Destination
+{524}{}	// Secondary Casting
+
+// 53 -- Succor Beast
+{530}{Art: 211, Palette: 1, Scale: 100%, Blend: Add, Sound: 19040, Flags: overlay_fb | animates, Light: 1, Light Color:  (0 @ 182 @ 25)}	// Cast
+{531}{}	// Projectile
+{532}{Art: 211, Palette: 1, Scale: 50%, Blend: Add, Sound: 19055, Flags: overlay_fb | animates, Light: 1, Light Color:  (0 @ 182 @ 25)}	// Destination
+{533}{}	// Secondary Destination
+{534}{}	// Secondary Casting
+
+// 54 -- Regenerate
+{540}{Art: 211, Palette: 1, Scale: 125%, Blend: Add, Sound: 19050, Flags: overlay_fb | animates, Light: 1, Light Color:  (0 @ 182 @ 25)}	// Cast
+{541}{}	// Projectile
+{542}{Art: 221, Palette: 1, Scale: 100%, Blend: Add, Flags: overlay_f | animates, Light: 1, Light Color:  (0 @ 182 @ 25)}	// Destination
+{543}{Art: 222, Palette: 1, Scale: 100%, Blend: Add, Flags: overlay_f | animates | anim_forever, Light: 1, Light Color:  (0 @ 182 @ 25)}	// Secondary Destination
+{544}{}	// Secondary Casting
+
+
+// College: [Necromantic (Evil)] ------
+
+// 55 -- Harm
+{550}{Art: 250, Palette: 0, Scale: 75%, Blend: Add, Sound: 20010, Flags: overlay_f | animates, Light: 1, Light Color:  (255 @ 50 @ 50)}	// Cast
+{551}{}	// Projectile
+{552}{Art: 236, Palette: 1, Scale: 100%, Blend: Add, Sound: 20015, Flags: overlay_fb | animates, Light: 1, Light Color: (255 @ 50 @ 50)}	// Destination
+{553}{}	// Secondary Destination
+{554}{}	// Secondary Casting
+
+// 56 -- Conjure Spirit
+{560}{Art: 235, Palette: 0, Scale: 100%, Blend: Add, Sound: 20030, Flags: overlay_fb | animates, Light: 1, Light Color:  (255 @ 50 @ 50)}	// Cast
+{561}{}	// Projectile
+{562}{Art: 242, Palette: 1, Scale: 100%, Blend: Add, Sound: 20035, Flags: overlay_f | animates, Light: 1, Light Color:  (255 @ 50 @ 50)}	// Destination
+{563}{Art: 243, Palette: 1, Scale: 100%, Blend: Add, Flags: overlay_f | animates | anim_forever, Light: 1, Light Color:  (255 @ 50 @ 50)}	// Secondary Destination
+{564}{}	// Secondary Casting
+
+// 56 -- Summon Undead
+{570}{Art: 235, Palette: 0, Scale: 100%, Blend: Add, Sound: 20040, Flags: overlay_fb | animates, Light: 1, Light Color:  (255 @ 50 @ 50)}	// Cast
+{571}{}	// Projectile
+{572}{Art: 246, Palette: 1, Scale: 100%, Blend: Add, Sound: 20045, Flags: overlay_f | animates, Light: 1, Light Color:  (255 @ 50 @ 50)}	// Destination
+{573}{}	// Secondary Destination
+{574}{}	// Secondary Casting
+
+// 58 -- Create Undead
+{580}{Art: 235, Palette: 0, Scale: 100%, Blend: Add, Sound: 20040, Flags: overlay_fb | animates, Light: 1, Light Color:  (255 @ 50 @ 50)}	// Cast
+{581}{}	// Projectile
+{582}{Art: 246, Palette: 1, Scale: 100%, Blend: Add, Sound: 20045, Flags: overlay_f | animates, Light: 1, Light Color:  (255 @ 50 @ 50)}	// Destination
+{583}{}	// Secondary Destination
+{584}{}	// Secondary Casting
+
+// 59 -- Quench Life
+{590}{Art: 235, Palette: 0, Scale: 125%, Blend: Add, Sound: 20050, Flags: overlay_fb | animates, Light: 1, Light Color:  (255 @ 50 @ 50)}	// Cast
+{591}{}	// Projectile
+{592}{Art: 248, Palette: 1, Scale: 100%, Blend: Add, Sound: 20055, Flags: overlay_fb | animates, Light: 1, Light Color:  (255 @ 50 @ 50)}	// Destination
+{593}{}	// Secondary Destination
+{594}{}	// Secondary Casting
+
+
+// College: [Necromantic (Good)] ------
+
+// 60 -- Minor Healing
+{600}{Art: 264, Palette: 1, Scale: 75%, Blend: Add, Sound: 21010, Flags: overlay_f | animates, Light: 1, Light Color:  (27 @ 183 @ 255)}	// Cast
+{601}{}	// Projectile
+{602}{Art: 252, Palette: 1, Scale: 100%, Blend: Add, Sound: 21015, Flags: overlay_f | animates, Light: 1, Light Color:  (27 @ 183 @ 255)}	// Destination
+{603}{}	// Secondary Destination
+{604}{}	// Secondary Casting
+
+// 61 -- Halt Poison
+{610}{Art: 264, Palette: 1, Scale: 100%, Blend: Add, Sound: 21020, Flags: overlay_f | animates, Light: 1, Light Color: (27 @ 183 @ 255)}	// Cast
+{611}{}	// Projectile
+{612}{Art: 255, Palette: 1, Scale: 100%, Blend: Add, Sound: 21025, Flags: overlay_fb | animates, Light:3, Light Color: (27 @ 183 @ 255)}	// Destination
+{613}{}	// Secondary Destination
+{614}{}	// Secondary Casting
+
+// 62 -- Major Healing
+{620}{Art: 235, Palette: 1, Scale: 100%, Blend: Add, Sound: 21030, Flags: overlay_fb | animates, Light: 1, Light Color: (27 @ 183 @ 255)}	// Cast
+{621}{}	// Projectile
+{622}{Art: 258, Palette: 1, Scale: 100%, Blend: Add, Sound: 21045, Flags: overlay_fb | animates, Light: 1, Light Color: (27 @ 183 @ 255)}	// Destination
+{623}{}	// Secondary Destination
+{624}{}	// Secondary Casting
+
+// 63 -- Sanctuary
+{630}{Art: 235, Palette: 1, Scale: 100%, Blend: Add, Sound:21040, Flags: overlay_fb | animates, Light: 1, Light Color: (27 @ 183 @ 255)}	// Cast
+{631}{}	// Projectile
+{632}{Art: 259, Palette: 1, Scale: 100%, Blend: Add, Sound: 21035, Flags: overlay_fb | animates, Light: 1, Light Color:  (27 @ 183 @ 255)}	// Destination
+//-633--Art: 260, Palette: 1, Scale: 100%, Blend: Add, Flags: overlay_fb | animates | anim_forever, Light: 1, Light Color:  (27 @ 183 @ 255)-	// Secondary Destination
+{633}{Art: 260, Palette: 1, Scale: 100%, Blend: Add, Flags: overlay_fb | animates | anim_forever, Light: 1, Light Color:  (27 @ 183 @ 255)}	// Secondary Destination
+{634}{}	// Secondary Casting
+
+// 64 -- Ressurrect
+{640}{Art: 235, Palette: 1, Scale: 125%, Blend: Add, Sound: 21050, Flags: overlay_fb | animates, Light: 1, Light Color:  (27 @ 183 @ 255)}	// Cast
+{641}{}	// Projectile
+{642}{Art: 263, Palette: 1, Scale: 100%, Blend: Add, Sound: 21055, Flags: overlay_fb | animates, Light: 1, Light Color: (27 @ 183 @ 255)}	// Destination
+// Note: This following line is also used for *ANY* resist/effect (including Magic/Tech resists)
+//-643--Art: 349, Palette: 1, Scale: 100%, Blend: Add, Flags: overlay_f | animates-	// Secondary Destination
+{643}{Art: 432, Palette: 1, Scale: 100%, Blend: Add, Sound: 21055, Flags: overlay_f | animates}	// Secondary Destination
+{644}{}	// Secondary Casting
+
+
+// College: [Phantasm] ------
+
+// 65 -- Illuminate
+{650}{Art: 265, Palette: 1, Scale: 75%, Blend: Add, Sound: 22010, Flags: overlay_fb | animates, Light: 1, Light Color:  (166 @ 0 @ 176)}	// Cast
+{651}{}	// Projectile
+{652}{Art: 266, Palette: 1, Scale: 100%, Blend: Add, Sound: 22015, Flags: overlay_f | animates, Light: 4, Light Color:  (166 @ 0 @ 176)}	// Destination
+{653}{Art: 266, Palette: 1, Scale: 100%, Blend: Add, Flags: overlay_f | animates | anim_forever, Light: 1, Light Color:  (226 @ 60 @ 236)}	// Secondary Destination
+{654}{}	// Secondary Casting
+
+// 66 -- Flash
+{660}{Art: 265, Palette: 1, Scale: 75%, Blend: Add, Sound: 22020, Flags: overlay_fb | animates, Light: 1, Light Color:  (166 @ 0 @ 176)}	// Cast
+{661}{}	// Projectile
+{662}{Art: 283, Palette: 1, Scale: 75%, Blend: Add, Flags: overlay_f | animates, Light: 1, Light Color:  (166 @ 0 @ 176)}	// Destination
+{663}{}	// Secondary Destination
+{664}{}	// Secondary Casting
+
+// 67 -- Blur Sight
+{670}{Art: 265, Palette: 1, Scale: 100%, Blend: Add, Sound: 22030, Flags: overlay_fb | animates, Light: 1, Light Color:  (166 @ 0 @ 176)}	// Cast
+{671}{}	// Projectile
+{672}{Art: 276, Palette: 1, Scale: 100%, Blend: Add, Flags: overlay_fb | animates, Light: 1, Light Color:  (166 @ 0 @ 176)}	// Destination
+{673}{Art: 277, Palette: 1, Scale: 100%, Blend: None, Flags: overlay_fb | animates | anim_forever}	// Secondary Destination
+{674}{}	// Secondary Casting
+
+// 68 -- Phantasmal Fiend
+{680}{Art: 265, Palette: 1, Scale: 100%, Blend: Add, Sound: 22040, Flags: overlay_fb | animates, Light: 1, Light Color:  (166 @ 0 @ 176)}	// Cast
+{681}{}				// Projectile
+{682}{Art: 283, Palette: 1, Scale: 100%, Blend: Add, Sound: 22045, Flags: overlay_f | animates, Light: 1, Light Color:  (166 @ 0 @ 176)}	// Destination
+{683}{}				// Secondary Destination
+{684}{}	// Secondary Casting
+
+// 69 -- Invisibility
+{690}{Art: 265, Palette: 1, Scale: 125%, Blend: Add, Sound: 22050, Flags: overlay_fb | animates, Light: 1, Light Color:  (166 @ 0 @ 176)}	// Cast
+{691}{}				// Projectile
+{692}{Art: 290, Palette: 1, Scale: 100%, Blend: Add, Sound: 22055, Flags: overlay_f | animates, Light: 1, Light Color:  (166 @ 0 @ 176)}	// Destination
+{693}{}				// Secondary Destination
+{694}{}	// Secondary Casting
+
+
+// College: [Summon] ------
+
+// 70 -- Plague of Insects
+{700}{Art: 328, Palette: 1, Scale: 100%, Blend: Add, Sound: 23010, Flags: overlay_f | animates, Light: 1, Light Color:  (50 @ 50 @ 255)}	// Cast
+{701}{}	// Projectile
+{702}{Art: 299, Palette: 1, Scale: 100%, Blend: Add, Sound: 23015, Flags: overlay_fb | animates, Light: 1, Light Color:  (50 @ 50 @ 255)}	// Destination
+{703}{Art: 300, Palette: 1, Scale: 100%, Blend: None, Flags: overlay_fb | animates | anim_forever}	// Secondary Destination
+{704}{}	// Secondary Casting
+
+// 71 -- Orcish Champion
+{710}{Art: 293, Palette: 1, Scale: 75%, Blend: Add, Sound: 23020, Flags: overlay_fb | animates, Light: 1, Light Color:  (50 @ 50 @ 255)}	// Cast
+{711}{}	// Projectile
+{712}{Art: 306, Palette: 1, Scale: 100%, Blend: Add, Sound: 23025, Flags: overlay_fb | animates, Light: 1, Light Color:  (50 @ 50 @ 255)}	// Destination
+{713}{}	// Secondary Destination
+{714}{}	// Secondary Casting
+
+// 72 -- Guardian Ogre
+{720}{Art: 293, Palette: 1, Scale: 100%, Blend: Add, Sound: 23030, Flags: overlay_fb | animates, Light: 1, Light Color:  (50 @ 50 @ 255)}	// Cast
+{721}{}	// Projectile
+{722}{Art: 313, Palette: 1, Scale: 100%, Blend: Add, Sound: 23035, Flags: overlay_fb | animates, Light:3, Light Color:  (50 @ 50 @ 255)}	// Destination
+{723}{}	// Secondary Destination
+{724}{}	// Secondary Casting
+
+// 73 -- Hellgate
+{730}{Art: 293, Palette: 1, Scale: 100%, Blend: Add, Sound: 23040, Flags: overlay_fb | animates, Light: 1, Light Color:  (50 @ 50 @ 255)}	// Cast
+{731}{}	// Projectile
+{732}{Art: 327, Palette: 1, Scale: 100%, Blend: Add, Sound: 23045, Flags: overlay_fb | animates, Light: 1, Light Color:  (50 @ 50 @ 255)}	// Destination
+{733}{}	// Secondary Destination
+{734}{}	// Secondary Casting
+
+// 74 -- Familiar
+{740}{Art: 293, Palette: 1, Scale: 125%, Blend: Add, Sound: 23050, Flags: overlay_fb | animates, Light:3, Light Color:  (50 @ 50 @ 255)}	// Cast
+{741}{}	// Projectile
+{742}{Art: 320, Palette: 1, Scale: 100%, Blend: Add, Sound: 23055, Flags: overlay_fb | animates, Light:3, Light Color:  (50 @ 50 @ 255)}	// Destination
+{743}{}	// Secondary Destination
+{744}{}	// Secondary Casting
+
+
+// College: [Temporal] ------
+
+// 75 -- Magelock
+{750}{Art: 329, Palette: 1, Scale: 75%, Blend: Add, Sound: 24010, Flags: overlay_fb | animates, Light: 1, Light Color:  (210 @ 199 @ 67)}	// Cast
+{751}{}	// Projectile
+{752}{Art: 330, Palette: 1, Scale: 100%, Blend: Add, Sound: 24015, Flags: overlay_f | animates, Light: 1, Light Color:  (210 @ 199 @ 67)}	// Destination
+{753}{Art: 331, Palette: 1, Scale: 100%, Blend: Add, Flags: overlay_f | animates | anim_forever}	// Secondary Destination
+{754}{}	// Secondary Casting
+
+// 76 -- Congeal Time
+{760}{Art: 329, Palette: 1, Scale: 75%, Blend: Add, Sound: 24020, Flags: overlay_fb | animates, Light: 1, Light Color:  (210 @ 199 @ 67)}	// Cast
+{761}{}	// Projectile
+{762}{Art: 333, Palette: 1, Scale: 100%, Blend: Add, Sound: 24025, Flags: overlay_fb | animates, Light: 1, Light Color:  (210 @ 199 @ 67)}	// Destination
+{763}{Art: 334, Palette: 1, Scale: 100%, Blend: Add, Flags: overlay_fb | animates | anim_forever}	// Secondary Destination
+{764}{}	// Secondary Casting
+
+// 77 -- Hasten
+{770}{Art: 329, Palette: 1, Scale: 100%, Blend: Add, Sound: 24040, Flags: overlay_fb | animates, Light: 1, Light Color:  (210 @ 199 @ 67)}	// Cast
+{771}{}	// Projectile
+{772}{Art: 339, Palette: 1, Scale: 100%, Blend: Add, Sound: 24045, Flags: overlay_fb | animates, Light: 1, Light Color:  (210 @ 199 @ 67)}	// Destination
+{773}{Art: 340, Palette: 1, Scale: 100%, Blend: Add, Flags: overlay_fb | animates | anim_forever}	// Secondary Destination
+{774}{}	// Secondary Casting
+
+// 78 -- Stasis
+{780}{Art: 329, Palette: 1, Scale: 100%, Blend: Add, Sound: 24030, Flags: overlay_fb | animates, Light: 1, Light Color:  (210 @ 199 @ 67)}	// Cast
+{781}{}	// Projectile
+{782}{Art: 336, Palette: 1, Scale: 100%, Blend: Add, Sound: 24035, Flags: overlay_fb | animates, Light: 1, Light Color:  (210 @ 199 @ 67)}	// Destination
+{783}{Art: 337, Palette: 1, Scale: 100%, Blend: Add, Flags: overlay_fb | animates | anim_forever}	// Secondary Destination
+{784}{}	// Secondary Casting
+
+// 79 -- Tempus Fugit
+{790}{Art: 329, Palette: 1, Scale: 125%, Blend: Add, Sound: 24050, Flags: overlay_fb | animates, Light: 1, Light Color:  (210 @ 199 @ 67)}	// Cast
+{791}{}	// Projectile
+{792}{Art: 343, Palette: 1, Scale: 100%, Blend: Add, Sound: 24055, Flags: overlay_fb | animates | anim_forever}	// Destination
+{793}{Art: 343, Palette: 1, Scale: 100%, Blend: Add, Flags: overlay_fb | animates}	// Secondary Destination
+{794}{}	// Secondary Casting
+
+
+
+// Item-Only Spells
+
+// 80 -- Tech: Teleportation (Made by Gentle_Giant)
+{800}{Art:444, Palette: 1, Scale: 100%, Blend: Add, Flags: overlay_fb | animates, Light: 1, Light Color:  (187 @ 0 @ 215)}	// Cast
+{801}{}	// Projectile
+{802}{Art:444, Palette: 1, Scale: 100%, Blend: Add, Flags: overlay_fb | animates, Light: 1, Light Color:  (187 @ 0 @ 215)}	// Destination
+{803}{}	// Secondary Destination
+{804}{}	// Secondary Casting
+
+// 81 -- MI: Drain Life (Made by Gentle_Giant)
+{810}{}	// Cast
+{811}{}	// Projectile
+{812}{Art: 239, Palette: 1, Scale: 100%, Blend: Add, Flags: overlay_fb | animates, Light: 1, Light Color: (255 @ 50 @ 50)}	// Destination
+{813}{Art: 252, Palette: 1, Scale: 100%, Blend: Add, Sound: 16045, Flags: overlay_f | animates, Light: 1, Light Color:  (27 @ 183 @ 255)}	// Secondary Destination
+{814}{}	// Secondary Casting
+
+// 82 -- MI: Fire Shield
+{820}{}	// Cast
+{821}{}	// Projectile
+{822}{}	// Destination
+{823}{Art: 349, Palette: 1, Scale: 100%, Blend: Add, Flags: overlay_f | animates}	// Secondary Destination
+{824}{}	// Secondary Casting
+
+// 83 -- MI: Shield
+{830}{}	// Cast
+{831}{}	// Projectile
+{832}{Art: 137, Palette: 1, Scale: 100%, Blend: Add, Flags: overlay_f | animates, Light: 1}	// Destination
+{833}{Art: 138, Palette: 1, Scale: 100%, Blend: Add, Flags: overlay_f | animates | anim_forever}	// Secondary Destination
+{834}{}	// Secondary Casting
+{835}{Art: 139, Palette: 1, Scale: 100%, Blend: Add, Flags: overlay_f | animates}	// Damage FX
+
+// 84 -- MI: Invisibility, Continuing
+{840}{Art: 9, Palette: 1, Scale: 100%, Blend: Add, Flags: overlay_f | animates}	// Cast
+{841}{}	// Projectile
+{842}{Art: 9, Palette: 1, Scale: 100%, Blend: Add, Flags: overlay_f | animates}	// Destination
+{843}{}	// Secondary Destination
+{844}{}	// Secondary Casting
+
+// 85 -- MI: Demonic Armor: Base
+{850}{}	// Cast
+{851}{}	// Projectile
+{852}{Art: 349, Palette: 1, Scale: 100%, Blend: Add, Flags: overlay_f | animates}	// Destination
+{853}{}	// Secondary Destination
+{854}{}	// Secondary Casting
+
+// 86 -- MI: Demonic Armor: Shield
+{860}{}	// Cast
+{861}{}	// Projectile
+{862}{}	// Destination
+{863}{Art: 349, Palette: 1, Scale: 100%, Blend: Add, Flags: overlay_f | animates}	// Secondary Destination
+{864}{}	// Secondary Casting
+
+// 87 -- MI: Electrical Shield
+{870}{}	// Cast
+{871}{}	// Projectile
+{872}{Art: 349, Palette: 1, Scale: 100%, Blend: Add, Flags: overlay_f | animates}	// Destination
+{873}{}	// Secondary Destination
+{874}{}	// Secondary Casting
+
+// 88 -- MI: SnakeForm
+{880}{}	// Cast
+{881}{}	// Projectile
+{882}{Art: 205, Palette: 1, Scale: 100%, Blend: Add, Sound: 18050, Flags: overlay_f | animates, Light: 1, Light Color:  (150 @ 150 @ 150)}	// Destination
+{883}{}	// Secondary Destination
+{884}{}	// Secondary Casting
+
+// 89 -- MI: Earthquake
+{890}{}	// Cast
+{891}{}	// Projectile
+{892}{Art: 74, Palette: 1, Scale: 100%, Blend: None, Flags: overlay_f | animates, Light: 1, Light Color:  (201 @ 164 @ 64)}	// Destination
+{893}{}	// Secondary Destination
+{894}{}	// Secondary Casting
+
+// 90 -- MI: Harm Undead
+{900}{}	// Cast
+{901}{}	// Projectile
+{902}{Art: 236, Palette: 1, Scale: 100%, Blend: Add, Flags: overlay_fb | animates, Light: 1, Light Color: (255 @ 50 @ 50)}	// Destination
+{903}{}	// Secondary Destination
+{904}{}	// Secondary Casting
+
+// 91 -- MI: Area Fear Undead
+{910}{}	// Cast
+{911}{}	// Projectile
+{912}{Art: 236, Palette: 1, Scale: 100%, Blend: Add, Flags: overlay_fb | animates, Light: 1, Light Color: (255 @ 50 @ 50)}	// Destination
+{913}{}	// Secondary Destination
+{914}{}	// Secondary Casting
+
+// 92 -- MI: Holy Smiting
+{920}{}	// Cast
+{921}{}	// Projectile
+{922}{Art: 236, Palette: 1, Scale: 100%, Blend: Add, Flags: overlay_fb | animates, Light: 1, Light Color: (255 @ 50 @ 50)}	// Destination
+{923}{}	// Secondary Destination
+{924}{}	// Secondary Casting
+
+// 93 -- MI: Slaying Strength
+{930}{}	// Cast
+{931}{}	// Projectile
+{932}{}	// Destination
+{933}{}	// Secondary Destination
+{934}{}	// Secondary Casting
+
+// 94 -- MI: Hammer of the Earth
+{940}{}	// Cast
+{941}{}	// Projectile
+{942}{}	// Destination
+{943}{}	// Secondary Destination
+{944}{}	// Secondary Casting
+
+// 95 -- MI: Axe of the Winds
+{950}{}	// Cast
+{951}{}	// Projectile
+{952}{}	// Destination
+{953}{}	// Secondary Destination
+{954}{}	// Secondary Casting
+
+// 96 -- MI: Dagger of Pain
+{960}{}	// Cast
+{961}{}	// Projectile
+{962}{}	// Destination
+{963}{}	// Secondary Destination
+{964}{}	// Secondary Casting
+
+// 97 -- MI: Animate Corpse
+{970}{}	// Cast
+{971}{}	// Projectile
+{972}{}	// Destination
+{973}{}	// Secondary Destination
+{974}{}	// Secondary Casting
+
+// 98 -- MI: Spell Breaker
+{980}{}	// Cast
+{981}{}	// Projectile
+{982}{}	// Destination
+{983}{}	// Secondary Destination
+{984}{}	// Secondary Casting
+
+// 99 -- MI: Bashing
+{990}{}	// Cast
+{991}{}	// Projectile
+{992}{}	// Destination
+{993}{}	// Secondary Destination
+{994}{}	// Secondary Casting
+
+// 100 -- MI: LifeWard
+{1000}{Art: 235, Palette: 1, Scale: 125%, Blend: Add, Sound: 21050, Flags: overlay_fb | animates, Light: 1, Light Color:  (27 @ 183 @ 255)}	// Cast
+{1001}{}	// Projectile
+{1002}{Art: 263, Palette: 1, Scale: 100%, Blend: Add, Flags: overlay_fb | animates, Light: 1, Light Color: (27 @ 183 @ 255)}	// Destination
+{1003}{Art: 349, Palette: 1, Scale: 100%, Blend: Add, Flags: overlay_f | animates}	// Secondary Destination
+{1004}{}	// Secondary Casting
+
+// 101 -- MI: Chain Lightning
+{1010}{}	// Cast
+{1011}{}	// Projectile
+{1012}{}	// Destination
+{1013}{}	// Secondary Destination
+{1014}{}	// Secondary Casting
+
+// 102 -- MI: Greater Healing
+{1020}{}	// Cast
+{1021}{}	// Projectile
+{1022}{}	// Destination
+{1023}{}	// Secondary Destination
+{1024}{}	// Secondary Casting
+
+// 103 -- MI: Steal Life
+{1030}{}	// Cast
+{1031}{}	// Projectile
+{1032}{}	// Destination
+{1033}{}	// Secondary Destination
+{1034}{}	// Secondary Casting
+
+// 104 -- MI: Mind Warp
+{1040}{}	// Cast
+{1041}{}	// Projectile
+{1042}{}	// Destination
+{1043}{}	// Secondary Destination
+{1044}{}	// Secondary Casting
+
+// 105 -- MI: Unrevivifiable Undead
+{1050}{}	// Cast
+{1051}{}	// Projectile
+{1052}{}	// Destination
+{1053}{}	// Secondary Destination
+{1054}{}	// Secondary Casting
+
+// 106 -- MI: Area Fear
+{1060}{}	// Cast
+{1061}{}	// Projectile
+{1062}{}	// Destination
+{1063}{}	// Secondary Destination
+{1064}{}	// Secondary Casting
+
+// 107 -- MI: Area Fatigue
+{1070}{}	// Cast
+{1071}{}	// Projectile
+{1072}{}	// Destination
+{1073}{}	// Secondary Destination
+{1074}{}	// Secondary Casting
+
+// 108 -- MI: Area Fear (Animals)
+{1080}{}	// Cast
+{1081}{}	// Projectile
+{1082}{}	// Destination
+{1083}{}	// Secondary Destination
+{1084}{}	// Secondary Casting
+
+// 109 -- MI: Area Reanimate
+{1090}{}	// Cast
+{1091}{}	// Projectile
+{1092}{}	// Destination
+{1093}{}	// Secondary Destination
+{1094}{}	// Secondary Casting
+
+// 110 -- MI: Wolf Form
+{1100}{}	// Cast
+{1101}{}	// Projectile
+{1102}{}	// Destination
+{1103}{}	// Secondary Destination
+{1104}{}	// Secondary Casting
+
+// 111 -- MI: Returning
+{1110}{}	// Cast
+{1111}{}	// Projectile
+{1112}{}	// Destination
+{1113}{}	// Secondary Destination
+{1114}{}	// Secondary Casting
+
+// 112 -- MI: Staff of the Necromancer
+{1120}{}	// Cast
+{1121}{}	// Projectile
+{1122}{}	// Destination
+{1123}{}	// Secondary Destination
+{1124}{}	// Secondary Casting
+
+// 113 -- MI: Paralyze (Evil)
+{1130}{}	// Cast
+{1131}{}	// Projectile
+{1132}{}	// Destination
+{1133}{}	// Secondary Destination
+{1134}{}	// Secondary Casting
+
+// 114 -- MI: Elven Perfume
+{1140}{}	// Cast
+{1141}{}	// Projectile
+{1142}{}	// Destination
+{1143}{}	// Secondary Destination
+{1144}{}	// Secondary Casting
+
+// 115 -- MI: Heal Light (Will'O'Wisp)
+{1150}{}	// Cast
+{1151}{}	// Projectile
+{1152}{}	// Destination
+{1153}{}	// Secondary Destination
+{1154}{}	// Secondary Casting
+
+
+
+// NOTE NOTE NOTE!!!  PADS HAVE BEEN MOVED TO SCRIPTEYECANDY.MES!!!!
+
+// 116 -- MI # 36  -- Reserved for Pad Lighting1 for scripts
+{1160}{}	// Cast
+//-1160--Art: 401, Palette: 1, Scale: 100%, Blend: Add, Flags: overlay_f | animates | anim_forever-	// Cast
+{1161}{Art: 402, Palette: 1, Scale: 100%, Blend: Add, Flags: underlay | animates | anim_forever}	// Projectile
+{1162}{Art: 403, Palette: 1, Scale: 100%, Blend: Add, Flags: underlay | animates | anim_forever}	// Destination
+{1163}{Art: 404, Palette: 1, Scale: 100%, Blend: Add, Flags: underlay | animates | anim_forever}	// Secondary Destination
+{1164}{Art: 405, Palette: 1, Scale: 100%, Blend: Add, Flags: underlay | animates | anim_forever}	// Secondary Casting
+
+// 117 -- MI # 37  -- Reserved for Pad Lighting2 for scripts
+{1170}{Art: 406, Palette: 1, Scale: 100%, Blend: Add, Flags: underlay | animates | anim_forever}	// Cast
+{1171}{Art: 407, Palette: 1, Scale: 100%, Blend: Add, Flags: underlay | animates | anim_forever}	// Projectile
+{1172}{Art: 408, Palette: 1, Scale: 100%, Blend: Add, Flags: underlay | animates | anim_forever}	// Destination
+{1173}{Art: 409, Palette: 1, Scale: 100%, Blend: Add, Flags: underlay | animates | anim_forever}	// Secondary Destination
+{1174}{Art: 410, Palette: 1, Scale: 100%, Blend: Add, Flags: underlay | animates | anim_forever}	// Secondary Casting
+
+// 118 -- MI # 38  -- Reserved for Pad Lighting3 for scripts
+{1180}{Art: 411, Palette: 1, Scale: 100%, Blend: Add, Flags: underlay | animates | anim_forever}	// Cast
+{1181}{Art: 412, Palette: 1, Scale: 100%, Blend: Add, Flags: underlay | animates | anim_forever}	// Projectile
+{1182}{Art: 413, Palette: 1, Scale: 100%, Blend: Add, Flags: underlay | animates | anim_forever}	// Destination
+{1183}{Art: 414, Palette: 1, Scale: 100%, Blend: Add, Flags: underlay | animates | anim_forever}	// Secondary Destination
+{1184}{Art: 415, Palette: 1, Scale: 100%, Blend: Add, Flags: underlay | animates | anim_forever}	// Secondary Casting
+
+// 119 -- MI # 39  -- Reserved for Pad Lighting4 for scripts
+{1190}{Art: 416, Palette: 1, Scale: 100%, Blend: Add, Flags: underlay | animates | anim_forever}	// Cast
+{1191}{Art: 417, Palette: 1, Scale: 100%, Blend: Add, Flags: underlay | animates | anim_forever}	// Projectile
+{1192}{Art: 418, Palette: 1, Scale: 100%, Blend: Add, Flags: underlay | animates | anim_forever}	// Destination
+{1193}{Art: 419, Palette: 1, Scale: 100%, Blend: Add, Flags: underlay | animates | anim_forever}	// Secondary Destination
+{1194}{Art: 420, Palette: 1, Scale: 100%, Blend: Add, Flags: underlay | animates | anim_forever}	// Secondary Casting
+
+// 120 -- MI # 40  -- MISC EFFECTS
+{1200}{Art: 377, Palette: 1, Scale: 100%, Blend: Add, Flags: overlay_f | animates, Light: 1, Light Color:  (255 @ 255 @ 255)}	// Left Pillar
+{1201}{Art: 378, Palette: 1, Scale: 100%, Blend: Add, Flags: overlay_f | animates, Light: 1, Light Color:  (255 @ 255 @ 255)}	// Right Pillar
+{1202}{Art: 379, Palette: 1, Scale: 100%, Blend: Add, Flags: overlay_fb | animates, Light: 1, Light Color:  (187 @ 0 @ 215)}	// Teleport Effect
+{1203}{Art: 380, Palette: 1, Scale: 100%, Blend: None, Flags: overlay_f | animates}	// Chest Breaking
+{1204}{}	// Secondary Casting
+
+// 121 -- MI: SuperHeal (SuperHeal)
+{1210}{}	// Cast
+{1211}{}	// Projectile
+{1212}{Art: 261, Palette: 1, Scale: 100%, Blend: Add, Sound: 21045, Flags: overlay_fb | animates, Light: 1, Light Color:  (27 @ 183 @ 255)}	// Destination
+{1213}{}	// Secondary Destination
+{1214}{}	// Secondary Casting
+//Art: 263, Palette: 1, Scale: 100%, Blend: Add, Flags: overlay_fb | animates, Light: 1, Light Color: (27 @ 183 @ 255)	// Destination
+//Art: 349, Palette: 1, Scale: 100%, Blend: Add, Flags: overlay_f | animates	// Secondary Destination
+
+// 122 -- MI: Araya Projectile
+{1220}{Art: 90, Palette: 1, Scale: 75%, Blend: Add, Sound: 12020, Flags: overlay_f | animates, Light: 1, Light Color:  (201 @ 164 @ 64)}	// Cast
+// NOTE: Currently re-using Stone Throw missile art!
+{1221}{Art: 70, Palette: 1, Scale: 75%, Blend: Add, Flags: overlay_f | animates, Light: 1, Light Color:  (201 @ 164 @ 64)}	// Projectile
+{1222}{Art: 74, Palette: 1, Scale: 100%, Blend: None, Flags: overlay_f | animates, Light: 1, Light Color:  (201 @ 164 @ 64)}	// Destination
+{1223}{}	// Secondary Destination
+{1224}{}	// Secondary Casting
+
+// 123 -- MI: Summon Seether
+// NOTE: Currently re-using Summon Ogre Art!
+{1230}{Art: 293, Palette: 1, Scale: 100%, Blend: Add, Sound: 23030, Flags: overlay_fb | animates, Light: 1, Light Color:  (50 @ 50 @ 255)}	// Cast
+{1231}{}	// Projectile
+{1232}{Art: 313, Palette: 1, Scale: 100%, Blend: Add, Flags: overlay_fb | animates, Light:3, Light Color:  (50 @ 50 @ 255)}	// Destination
+{1233}{}	// Secondary Destination
+{1234}{}	// Secondary Casting
+
+// 124 -- MI: Summon Were-Rat
+// NOTE: Currently re-using Summon Ogre Art!
+{1240}{Art: 293, Palette: 1, Scale: 100%, Blend: Add, Sound: 23030, Flags: overlay_fb | animates, Light: 1, Light Color:  (50 @ 50 @ 255)}	// Cast
+{1241}{}	// Projectile
+{1242}{Art: 313, Palette: 1, Scale: 100%, Blend: Add, Flags: overlay_fb | animates, Light:3, Light Color:  (50 @ 50 @ 255)}	// Destination
+{1243}{}	// Secondary Destination
+{1244}{}	// Secondary Casting
+
+// 125 -- MI: Summon Wargun
+// NOTE: Currently re-using Summon Ogre Art!
+{1250}{Art: 293, Palette: 1, Scale: 100%, Blend: Add, Sound: 23030, Flags: overlay_fb | animates, Light: 1, Light Color:  (50 @ 50 @ 255)}	// Cast
+{1251}{}	// Projectile
+{1252}{Art: 313, Palette: 1, Scale: 100%, Blend: Add, Flags: overlay_fb | animates, Light:3, Light Color:  (50 @ 50 @ 255)}	// Destination
+{1253}{}	// Secondary Destination
+{1254}{}	// Secondary Casting
+
+// 126 -- MI: Summon Baleful Hound
+// NOTE: Currently re-using Summon Ogre Art!
+{1260}{Art: 293, Palette: 1, Scale: 100%, Blend: Add, Sound: 23030, Flags: overlay_fb | animates, Light: 1, Light Color:  (50 @ 50 @ 255)}	// Cast
+{1261}{}	// Projectile
+{1262}{Art: 313, Palette: 1, Scale: 100%, Blend: Add, Flags: overlay_fb | animates, Light:3, Light Color:  (50 @ 50 @ 255)}	// Destination
+{1263}{}	// Secondary Destination
+{1264}{}	// Secondary Casting
+
+// 127 -- MI: Flesh To Stone (Duration)
+{1270}{Art: 195, Palette: 1, Scale: 100%, Blend: Add, Sound: 18030, Flags: overlay_fb | animates, Light: 1, Light Color:  (150 @ 150 @ 150)}	// Cast
+{1271}{}	// Projectile
+{1272}{Art: 202, Palette: 1, Scale: 100%, Blend: Add, Flags: overlay_f | animates, Light: 1, Light Color:  (150 @ 150 @ 150)}	// Destination
+{1273}{}	// Secondary Destination
+{1274}{}	// Secondary Casting
+
+// 128 -- MI: Slow Party
+// NOTE: This is re-using the Congeal Time Art!
+{1280}{}	// Cast
+{1281}{}	// Projectile
+{1282}{Art: 333, Palette: 1, Scale: 100%, Blend: Add, Flags: overlay_fb | animates, Light: 1, Light Color:  (210 @ 199 @ 67)}	// Destination
+{1283}{Art: 334, Palette: 1, Scale: 100%, Blend: Add, Flags: overlay_fb | animates | anim_forever}	// Secondary Destination
+{1284}{}	// Secondary Casting
+
+// 129 -- MI: Poison DOT
+// NOTE: This is re-using the Poison Art!
+{1290}{}	// Cast
+{1291}{}	// Projectile
+{1292}{Art: 239, Palette: 1, Scale: 100%, Blend: Add, Flags: overlay_fb | animates, Light: 1, Light Color:  (255 @ 50 @ 50)}	// Destination
+{1293}{}	// Secondary Destination
+{1294}{}	// Secondary Casting
+
+// 130 -- MI: Fatigue DOT
+// NOTE: This is re-using the Poison Art!
+{1300}{}	// Cast
+{1301}{}	// Projectile
+{1302}{Art: 239, Palette: 1, Scale: 100%, Blend: Add, Flags: overlay_fb | animates, Light: 1, Light Color:  (255 @ 50 @ 50)}	// Destination
+{1303}{}	// Secondary Destination
+{1304}{}	// Secondary Casting
+
+// 131 -- MI: Call Winds (All)
+// NOTE: This is re-using the Call-Winds Art!
+{1310}{}	// Cast
+{1311}{}	// Projectile
+{1312}{Art: 48, Palette: 1, Scale: 100%, Blend: Add, Sound: 0011, Flags: overlay_fb | animates, Light: 1, Light Color:  (108 @ 238 @ 242)}	// Destination
+{1313}{}	// Secondary Destination
+{1314}{}	// Secondary Casting
+
+// 132 -- MI: Unseen Force (All)
+// NOTE: This is re-using the Unseen Force Art!
+{1320}{}	// Cast
+{1321}{}	// Projectile
+{1322}{Art: 15, Palette: 1, Scale: 100%, Blend: Add, Flags: overlay_fb | animates, Light: 1, Light Color:  (187 @ 0 @ 215)}	// Destination
+{1323}{}	// Secondary Destination
+{1324}{}	// Secondary Casting
+
+// 133 -- MI: Stasis (Duration)
+// NOTE: This is re-using the Stasis Art!
+{1330}{}	// Cast
+{1331}{}	// Projectile
+{1332}{Art: 336, Palette: 1, Scale: 100%, Blend: Add, Flags: overlay_fb | animates, Light: 1, Light Color:  (210 @ 199 @ 67)}	// Destination
+{1333}{Art: 337, Palette: 1, Scale: 100%, Blend: Add, Flags: overlay_fb | animates | anim_forever}	// Secondary Destination
+{1334}{}	// Secondary Casting
+
+// 134 -- MI: Freeze
+{1340}{Art: 195, Palette: 1, Scale: 100%, Blend: Add, Sound: 18030, Flags: overlay_fb | animates, Light: 1, Light Color:  (150 @ 150 @ 150)}	// Cast
+{1341}{}	// Projectile
+{1342}{Art: 202, Palette: 1, Scale: 100%, Blend: Add, Flags: overlay_f | animates, Light: 1, Light Color:  (150 @ 150 @ 150)}	// Destination
+{1343}{}	// Secondary Destination
+{1344}{}	// Secondary Casting
+
+// 135 -- MI: Summon Undead
+// NOTE: Currently re-using Summon Ogre Art!
+{1350}{Art: 293, Palette: 1, Scale: 100%, Blend: Add, Sound: 23030, Flags: overlay_fb | animates, Light: 1, Light Color:  (50 @ 50 @ 255)}	// Cast
+{1351}{}	// Projectile
+{1352}{Art: 313, Palette: 1, Scale: 100%, Blend: Add, Flags: overlay_fb | animates, Light:3, Light Color:  (50 @ 50 @ 255)}	// Destination
+{1353}{}	// Secondary Destination
+{1354}{}	// Secondary Casting
+
+// 136 -- MI: Conjure Spirit II Tulla Pool Guy
+{1360}{}	// Cast
+{1361}{}	// Projectile
+{1362}{Art: 384, Palette: 1, Scale: 100%, Blend: Add, Flags: overlay_f | animates, Light: 1, Light Color:  (255 @ 50 @ 50)}	// Destination
+{1363}{Art: 385, Palette: 1, Scale: 100%, Blend: Add, Flags: overlay_f | animates | anim_forever, Light: 1, Light Color:  (255 @ 50 @ 50)}	// Secondary Destination
+{1364}{}	// Secondary Casting
+
+// 137 -- MI: Heal Potion
+{1370}{}	// Cast
+{1371}{}	// Projectile
+{1372}{}	// Destination
+{1373}{}	// Secondary Destination
+{1374}{}	// Secondary Casting
+
+// 138 -- MI: Haste Boots
+{1380}{}	// Cast
+{1381}{}	// Projectile
+{1382}{}	// Destination
+{1383}{}	// Secondary Destination
+{1384}{}	// Secondary Casting
+
+// 139 -- MI # 59
+{1390}{}	// Cast
+{1391}{}	// Projectile
+{1392}{}	// Destination
+{1393}{}	// Secondary Destination
+{1394}{}	// Secondary Casting
+
+
+
+//
+// Tech Items:
+//
+
+
+// 140 -- Tech: Bear Trap
+{1400}{}	// Cast
+{1401}{}	// Projectile
+{1402}{Art: 371, Palette: 1, Scale: 100%, Blend: None, Sound: 24065, Flags: overlay_fb | animates}	// Destination
+{1403}{Art: 372, Palette: 1, Scale: 100%, Blend: None, Flags: overlay_fb | animates | anim_forever}	// Secondary Destination
+{1404}{}	// Secondary Casting
+
+// 141 -- Tech: Brain Builder
+{1410}{}	// Cast
+{1411}{}	// Projectile
+{1412}{Art: 373, Palette: 1, Scale: 100%, Blend: Add, Sound: 24070, Flags: overlay_fb | animates}	// Destination
+{1413}{}	// Secondary Destination
+{1414}{}	// Secondary Casting
+
+// 142 -- Tech: Hypnotic Suggestion
+{1420}{}	// Cast
+{1421}{}	// Projectile
+{1422}{Art: 368, Palette: 1, Scale: 100%, Blend: Add, Sound: 24070, Flags: overlay_f | animates, Light: 1, Light Color:  (210 @ 199 @ 67)}	// Destination
+{1423}{}	// Secondary Destination
+{1424}{}	// Secondary Casting
+
+// 143 -- Tech: Basic Paralysis (Duration) Effect
+{1430}{}	// Cast
+{1431}{}	// Projectile
+{1432}{Art: 368, Palette: 1, Scale: 100%, Blend: Add, Sound: 24070, Flags: overlay_f | animates, Light: 1, Light Color:  (210 @ 199 @ 67)}	// Destination
+{1433}{Art: 368, Palette: 1, Scale: 100%, Blend: Add, Flags: overlay_f | animates | anim_forever}	// Secondary Destination
+{1434}{}	// Secondary Casting
+
+// 144 -- Tech: Muscle Maker
+{1440}{}	// Cast
+{1441}{}	// Projectile
+{1442}{Art: 373, Palette: 1, Scale: 100%, Blend: Add, Sound: 24070, Flags: overlay_fb | animates}	// Destination
+{1443}{}	// Secondary Destination
+{1444}{}	// Secondary Casting
+
+// 145 -- Tech: Dex Enhancer
+{1450}{Art: 373, Palette: 1, Scale: 75%, Blend: Add, Sound: 24070, Flags: overlay_fb | animates, Light: 1, Light Color:  (27 @ 183 @ 255)}	// Cast
+{1451}{}	// Projectile
+{1452}{}	// Destination
+{1453}{}	// Secondary Destination
+{1454}{}	// Secondary Casting
+
+// 146 -- Tech: Magic Detect
+{1460}{Art: 9, Palette: 1, Scale: 100%, Blend: Add, Flags: overlay_f | animates}	// Cast
+{1461}{}	// Projectile
+{1462}{}	// Destination
+{1463}{}	// Secondary Destination
+{1464}{}	// Secondary Casting
+
+// 147 -- Tech: Shocking Staff
+{1470}{}	// Cast
+{1471}{}	// Projectile
+{1472}{Art: 141, Palette: 1, Scale: 100%, Blend: Add, Sound: 24105, Flags: overlay_fb | animates, Light: 1}	// Destination
+{1473}{Art: 349, Palette: 1, Scale: 100%, Blend: Add, Flags: overlay_f | animates, Light: 1}	// Secondary Destination
+{1474}{}	// Secondary Casting
+
+// 148 -- Tech: Explode (Hallucinate)
+{1480}{}	// Cast
+{1481}{}	// Projectile
+{1482}{Art: 368, Palette: 1, Scale: 100%, Blend: Add, Sound: 24070, Flags: overlay_f | animates, Light: 1, Light Color:  (210 @ 199 @ 67)}	// Destination
+{1483}{}	// Secondary Destination
+{1484}{}	// Secondary Casting
+
+// 149 -- Tech: Heal Regen  NOT USED 
+{1490}{}	// Cast
+{1491}{}	// Projectile
+{1492}{}	// Destination
+{1493}{}	// Secondary Destination
+{1494}{}	// Secondary Casting
+
+// 150 -- Tech: Heal Light
+{1500}{}	// Cast
+{1501}{}	// Projectile
+{1502}{Art: 373, Palette: 1, Scale: 100%, Blend: Add, Sound: 24070, Flags: overlay_fb | animates}	// Destination
+{1503}{}	// Secondary Destination
+{1504}{}	// Secondary Casting
+
+// 151 -- Tech: Fatigue Restore
+{1510}{}	// Cast
+{1511}{}	// Projectile
+{1512}{Art: 373, Palette: 1, Scale: 100%, Blend: Add, Sound: 24070, Flags: overlay_fb | animates}	// Destination
+{1513}{}	// Secondary Destination
+{1514}{}	// Secondary Casting
+
+// 152 -- Tech: Cure Poison
+{1520}{}	// Cast
+{1521}{}	// Projectile
+{1522}{Art: 373, Palette: 1, Scale: 100%, Blend: Add, Sound: 24070, Flags: overlay_fb | animates}	// Destination
+{1523}{}	// Secondary Destination
+{1524}{}	// Secondary Casting
+
+// 153 -- Tech: Fatigue Limiter
+{1530}{}	// Cast
+{1531}{}	// Projectile
+{1532}{Art: 373, Palette: 1, Scale: 100%, Blend: Add, Sound: 24070, Flags: overlay_fb | animates}	// Destination
+{1533}{}	// Secondary Destination
+{1534}{}	// Secondary Casting
+
+// 154 -- Tech: Heal Accelerator
+{1540}{}	// Cast
+{1541}{}	// Projectile
+{1542}{Art: 373, Palette: 1, Scale: 100%, Blend: Add, Sound: 24070, Flags: overlay_fb | animates}	// Destination
+{1543}{}	// Secondary Destination
+{1544}{}	// Secondary Casting
+
+// 155 -- Tech: Wonder Drug
+{1550}{}	// Cast
+{1551}{}	// Projectile
+{1552}{Art: 373, Palette: 1, Scale: 100%, Blend: Add, Sound: 24070, Flags: overlay_fb | animates}	// Destination
+{1553}{}	// Secondary Destination
+{1554}{}	// Secondary Casting
+
+// 156 -- Tech: Cure All
+{1560}{}	// Cast
+{1561}{}	// Projectile
+{1562}{Art: 373, Palette: 1, Scale: 100%, Blend: Add, Sound: 24070, Flags: overlay_fb | animates}	// Destination
+{1563}{}	// Secondary Destination
+{1564}{}	// Secondary Casting
+
+// 157 -- Tech: Boost Intelligence
+{1570}{}	// Cast
+{1571}{}	// Projectile
+{1572}{Art: 373, Palette: 0, Scale: 100%, Blend: Add, Sound: 24070, Flags: overlay_fb | animates, Light: 1, Light Color:  (111 @ 181 @ 116)}	// Destination
+{1573}{}	// Secondary Destination
+{1574}{}	// Secondary Casting
+
+// 158 -- Tech: Boost Strength
+{1580}{}	// Cast
+{1581}{}	// Projectile
+{1582}{Art: 373, Palette: 0, Scale: 100%, Blend: Add, Sound: 24070, Flags: overlay_fb | animates, Light: 1, Light Color:  (111 @ 181 @ 116)}	// Destination
+{1583}{}	// Secondary Destination
+{1584}{}	// Secondary Casting
+
+// 159 -- Tech: Boost Perception
+{1590}{}	// Cast
+{1591}{}	// Projectile
+{1592}{Art: 373, Palette: 0, Scale: 100%, Blend: Add, Sound: 24070, Flags: overlay_fb | animates, Light: 1, Light Color:  (111 @ 181 @ 116)}	// Destination
+{1593}{}	// Secondary Destination
+{1594}{}	// Secondary Casting
+
+// 160 -- Tech: Boost Dexterity
+{1600}{}	// Cast
+{1601}{}	// Projectile
+{1602}{Art: 373, Palette: 0, Scale: 100%, Blend: Add, Sound: 24070, Flags: overlay_fb | animates, Light: 1, Light Color:  (111 @ 181 @ 116)}	// Destination
+{1603}{}	// Secondary Destination
+{1604}{}	// Secondary Casting
+
+// 161 -- Tech: Boost Mental
+{1610}{}	// Cast
+{1611}{}	// Projectile
+{1612}{Art: 373, Palette: 0, Scale: 100%, Blend: Add, Sound: 24070, Flags: overlay_fb | animates, Light: 1, Light Color:  (111 @ 181 @ 116)}	// Destination
+{1613}{}	// Secondary Destination
+{1614}{}	// Secondary Casting
+
+// 162 -- Tech: Boost Physical
+{1620}{}	// Cast
+{1621}{}	// Projectile
+{1622}{Art: 373, Palette: 1, Scale: 100%, Blend: Add, Sound: 24070, Flags: overlay_fb | animates, Light: 1, Light Color:  (111 @ 181 @ 116)}	// Destination
+{1623}{}	// Secondary Destination
+{1624}{}	// Secondary Casting
+
+// 163 -- Tech: Boost All
+{1630}{}	// Cast
+{1631}{}	// Projectile
+{1632}{Art: 373, Palette: 0, Scale: 100%, Blend: Add, Sound: 24070, Flags: overlay_fb | animates, Light: 1, Light Color:  (111 @ 181 @ 116)}	// Destination
+{1633}{}	// Secondary Destination
+{1634}{}	// Secondary Casting
+
+// 164 -- Tech: Poison
+{1640}{}	// Cast
+{1641}{}	// Projectile
+{1642}{Art: 368, Palette: 0, Scale: 100%, Blend: Add, Sound: 24070, Flags: overlay_f | animates}	// Destination
+{1643}{}	// Secondary Destination
+{1644}{}	// Secondary Casting
+
+// 165 -- Tech: Hallucinate
+{1650}{}	// Cast
+{1651}{}	// Projectile
+{1652}{Art: 368, Palette: 1, Scale: 100%, Blend: Add, Sound: 24070, Flags: overlay_f | animates, Light: 1, Light Color:  (210 @ 199 @ 67)}	// Destination
+//-1653--Art: 368, Palette: 1, Scale: 100%, Blend: Add, Flags: overlay_f | animates | anim_forever-	// Secondary Destination
+{1653}{}	// Secondary Destination
+{1654}{}	// Secondary Casting
+
+// 166 -- Tech: Acid
+{1660}{}	// Cast
+{1661}{}	// Projectile
+{1662}{Art: 349, Palette: 1, Scale: 100%, Blend: Add, Sound: 24085, Flags: overlay_f | animates}	// Destination
+{1663}{}	// Secondary Destination
+{1664}{}	// Secondary Casting
+
+// 167 -- Tech: Animal Scent
+{1670}{}	// Cast
+{1671}{}	// Projectile
+{1672}{Art: 9, Palette: 1, Scale: 100%, Blend: Add, Sound: 24070, Flags: overlay_f | animates}	// Destination
+{1673}{}	// Secondary Destination
+{1674}{}	// Secondary Casting
+
+// 168 -- Tech: Charged Regenerate
+{1680}{}	// Cast
+{1681}{}	// Projectile
+{1682}{Art: 373, Palette: 1, Scale: 100%, Blend: Add, Sound: 24115, Flags: overlay_fb | animates, Light: 1, Light Color:  (27 @ 183 @ 255)}	// Destination
+{1683}{}	// Secondary Destination
+{1684}{}	// Secondary Casting
+
+// 169 -- Tech: Venom
+{1690}{}	// Cast
+{1691}{}	// Projectile
+{1692}{Art: 368, Palette: 0, Scale: 100%, Blend: Add, Sound: 24070, Flags: overlay_f | animates}	// Destination
+{1693}{}	// Secondary Destination
+{1694}{}	// Secondary Casting
+
+// 170 -- Tech: Cleaner
+{1700}{}	// Cast
+{1701}{}	// Projectile
+{1702}{Art: 239, Palette: 1, Scale: 100%, Blend: Add, Sound: 24070, Flags: overlay_fb | animates, Light: 1, Light Color:  (255 @ 50 @ 50)}	// Destination
+{1703}{}	// Secondary Destination
+{1704}{}	// Secondary Casting
+
+// 171 -- Tech: Strong Poison
+{1710}{}	// Cast
+{1711}{}	// Projectile
+{1712}{Art: 368, Palette: 0, Scale: 100%, Blend: Add, Sound: 24070, Flags: overlay_f | animates}	// Destination
+{1713}{}	// Secondary Destination
+{1714}{}	// Secondary Casting
+
+// 172 -- Tech: Wine
+{1720}{}	// Cast
+{1721}{}	// Projectile
+//-1722--Art: 239, Palette: 1, Scale: 100%, Blend: Add, Flags: overlay_fb | animates, Light: 1, Light Color:  (255 @ 50 @ 50)-	// Destination
+{1722}{}	// Destination
+{1723}{}	// Secondary Destination
+{1724}{}	// Secondary Casting
+
+// 173 -- Tech: Aqua Vitae
+{1730}{}	// Cast
+{1731}{}	// Projectile
+{1732}{Art: 239, Palette: 1, Scale: 100%, Blend: Add, Sound: 24070, Flags: overlay_fb | animates, Light: 1, Light Color:  (255 @ 50 @ 50)}	// Destination
+{1733}{}	// Secondary Destination
+{1734}{}	// Secondary Casting
+
+// 174 -- Tech: Electrical Shield
+{1740}{}	// Cast
+{1741}{}	// Projectile
+{1742}{Art: 349, Palette: 1, Scale: 100%, Blend: Add, Sound: 24105, Flags: overlay_f | animates}	// Destination
+{1743}{}	// Secondary Destination
+{1744}{}	// Secondary Casting
+
+// 175 -- Tech: Explosion (Grenade)
+{1750}{}	// Cast
+{1751}{}	// Projectile
+{1752}{Art: 350, Palette: 1, Scale: 100%, Blend: Add, Sound: 8808, Flags: overlay_f | animates, Light: 1, Light Color:   (242 @ 165 @ 0)}	// Destination
+{1753}{Art: 349, Palette: 1, Scale: 100%, Blend: Add, Flags: overlay_f | animates}	// Secondary Destination
+{1754}{}	// Secondary Casting
+
+// 176 -- Tech: Explosion (Dynamite)
+{1760}{}	// Cast
+{1761}{}	// Projectile
+{1762}{Art: 350, Palette: 1, Scale: 100%, Blend: Add, Sound: 8808, Flags: overlay_f | animates, Light: 1, Light Color:   (242 @ 165 @ 0)}	// Destination
+{1763}{Art: 349, Palette: 1, Scale: 100%, Blend: Add, Flags: overlay_f | animates}	// Secondary Destination
+{1764}{}	// Secondary Casting
+
+// 177 -- Tech: Explode (Flash)
+{1770}{}	// Cast
+{1771}{}	// Projectile
+{1772}{Art: 369, Palette: 1, Scale: 100%, Blend: Add, Sound: 8808, Flags: overlay_f | animates, Light: 1, Light Color:   (242 @ 165 @ 0)}	// Destination
+{1773}{Art: 349, Palette: 1, Scale: 100%, Blend: Add, Flags: overlay_f | animates}	// Secondary Destination
+//-1772--Art: 55, Palette: 1, Scale: 100%, Blend: Add, Sound: 8808, Flags: overlay_f | animates-	// Destination
+//-1773--Art: 55, Palette: 2, Scale: 100%, Blend: Add, Flags: overlay_f | animates | anim_forever-	// Secondary Destination
+{1774}{}	// Secondary Casting
+
+// 178 -- Tech: Explode (Smoke)
+{1780}{}	// Cast
+{1781}{}	// Projectile
+{1782}{Art: 55, Palette: 1, Scale: 100%, Blend: Add, Sound: 8808, Flags: overlay_f | animates}	// Destination
+{1783}{Art: 55, Palette: 1, Scale: 100%, Blend: Add, Flags: overlay_f | animates | anim_forever}	// Secondary Destination
+//-1782--Art: 116, Palette: 1, Scale: 100%, Blend: Add, Flags: overlay_f | animates-	// Destination
+//-1783--Art: 117, Palette: 1, Scale: 100%, Blend: Add, Flags: overlay_f | animates | anim_forever, Light: 1, Light Color:  (0 @ 96 @ 204)-	// Secondary Destination
+{1784}{}	// Secondary Casting
+
+// 179 -- Tech: Explode (Stun)
+{1790}{}	// Cast
+{1791}{}	// Projectile
+{1792}{Art: 369, Palette: 1, Scale: 100%, Blend: Add, Sound: 8808, Flags: overlay_f | animates, Light: 1, Light Color:   (242 @ 165 @ 0)}	// Destination
+{1793}{}	// Secondary Destination
+{1794}{}	// Secondary Casting
+
+// 180 -- Tech: Explode (Fire)
+{1800}{}	// Cast
+{1801}{}	// Projectile
+// OLD Eye-candy based wall of fire...NOTE: Mike, if you change this one, change the Explode Fire (Fire Wall) as well!
+//-1802--Art: 95, Palette: 1, Scale: 100%, Blend: Add, Sound: 13030, Flags: overlay_fb | animates, Light: 1, Light Color:  (0 @ 96 @ 204)-	// Destination
+//-1803--Art: 96, Palette: 1, Scale: 100%, Blend: Add, Sound: 8500, Flags: overlay_fb | animates | anim_forever, Light: 1, Light Color:  (0 @ 96 @ 204)-	// Secondary Destination
+{1802}{}	// Destination
+{1803}{}	// Secondary Destination
+{1804}{}	// Secondary Casting
+
+// 181 -- Tech: Alchohol
+{1810}{}	// Cast
+{1811}{}	// Projectile
+{1812}{}	// Destination
+{1813}{}	// Secondary Destination
+{1814}{}	// Secondary Casting
+
+// 182 -- Tech: Magnetic Inversion
+{1820}{}	// Cast
+{1821}{}	// Projectile
+{1822}{Art: 367, Palette: 1, Scale: 100%, Blend: Add, Flags: overlay_f | animates | anim_forever}	// Destination
+{1823}{}	// Secondary Destination
+{1824}{}	// Secondary Casting
+{1825}{Art: 366, Palette: 1, Scale: 100%, Blend: Add, Flags: overlay_f | animates}	// Damage FX
+
+// 183 -- Tech: Animal Lure
+{1830}{}	// Cast
+{1831}{}	// Projectile
+{1832}{Art: 368, Palette: 2, Scale: 100%, Sound: 24070, Blend: Add, Flags: overlay_f | animates}	// Destination
+{1833}{}	// Secondary Destination
+{1834}{}	// Secondary Casting
+
+// 184 -- Tech: Trap Springer
+{1840}{}	// Cast
+{1841}{}	// Projectile
+{1842}{Sound: 8829}	// Destination
+{1843}{}	// Secondary Destination
+{1844}{}	// Secondary Casting
+
+// 185 -- Tech: Explode (Poison)
+{1850}{}	// Cast
+{1851}{}	// Projectile
+{1852}{Art: 368, Palette: 0, Scale: 100%, Blend: Add, Sound: 13030, Flags: overlay_f | animates}	// Destination
+{1853}{Art: 368, Palette: 0, Scale: 100%, Blend: Add, Flags: overlay_f | animates | anim_forever}	// Secondary Destination
+{1854}{}	// Secondary Casting
+
+// 186 -- Tech: Flash (Blindess effect on npcs, no art or sound needed)
+{1860}{}	// Cast
+{1861}{}	// Projectile
+{1862}{}	// Destination
+{1863}{}	// Secondary Destination
+{1864}{}	// Secondary Casting
+
+// 187 -- Tech: Magnetic Inversion Charge ( not being used currently )
+{1870}{}	// Cast
+{1871}{}	// Projectile
+{1872}{Art: 367, Palette: 1, Scale: 100%, Blend: Add, Flags: overlay_f | animates | anim_forever}	// Destination
+{1873}{}	// Secondary Destination
+{1874}{}	// Secondary Casting
+{1875}{Art: 366, Palette: 1, Scale: 100%, Blend: Add, Flags: overlay_f | animates}	// Damage FX
+
+// 188 -- Tech: mtTechTrapSkillEnhancer
+{1880}{}	// Cast
+{1881}{}	// Projectile
+{1882}{}	// Destination
+{1883}{}	// Secondary Destination
+{1884}{}	// Secondary Casting
+
+// 189 -- Tech: mtTechInvigorator
+{1890}{}	// Cast
+{1891}{}	// Projectile
+{1892}{Art: 373, Palette: 1, Scale: 100%, Blend: Add, Sound: 24070, Flags: overlay_fb | animates}	// Destination
+{1893}{}	// Secondary Destination
+{1894}{}	// Secondary Casting
+
+// 190 -- Tech: mtTechReanimator
+{1900}{}	// Cast
+{1901}{}	// Projectile
+{1902}{Art: 373, Palette: 1, Scale: 100%, Blend: Add, Sound: 24070, Flags: overlay_fb | animates}	// Destination
+{1903}{}	// Secondary Destination
+{1904}{}	// Secondary Casting
+
+// 191 -- Tech: mtTechHealInjection
+{1910}{}	// Cast
+{1911}{}	// Projectile
+{1912}{Art: 373, Palette: 1, Scale: 100%, Blend: Add, Sound: 24070, Flags: overlay_fb | animates}	// Destination
+{1913}{}	// Secondary Destination
+{1914}{}	// Secondary Casting
+
+// 192 -- Tech: mtTechMiracleCure
+{1920}{}	// Cast
+{1921}{}	// Projectile
+{1922}{Art: 373, Palette: 1, Scale: 100%, Blend: Add, Sound: 24070, Flags: overlay_fb | animates}	// Destination
+{1923}{}	// Secondary Destination
+{1924}{}	// Secondary Casting
+
+// 193 -- Tech: mtTechMentalInhibitor
+{1930}{}	// Cast
+{1931}{}	// Projectile
+{1932}{}	// Destination
+{1933}{}	// Secondary Destination
+{1934}{}	// Secondary Casting
+
+// 194 -- Tech: mtTechNecromizer
+{1940}{}	// Cast
+{1941}{}	// Projectile
+{1942}{}	// Destination
+{1943}{}	// Secondary Destination
+{1944}{}	// Secondary Casting
+
+// 195 -- Tech: mtTechFortifier
+{1950}{}	// Cast
+{1951}{}	// Projectile
+{1952}{Art: 373, Palette: 1, Scale: 100%, Blend: Add, Sound: 24070, Flags: overlay_fb | animates}	// Destination
+{1953}{}	// Secondary Destination
+{1954}{}	// Secondary Casting
+
+// 196 -- Tech: mtTechSleepAid
+{1960}{}	// Cast
+{1961}{}	// Projectile
+{1962}{Art: 349, Palette: 1, Scale: 100%, Blend: Add, Flags: overlay_f | animates, Light: 1}	// Destination
+{1963}{}	// Secondary Destination
+{1964}{}	// Secondary Casting
+
+// 197 -- Tech: mtTechPotionOfParalysis
+{1970}{}	// Cast
+{1971}{}	// Projectile
+//-1972--Art: 349, Palette: 1, Scale: 100%, Blend: Add, Flags: overlay_f | animates, Light: 1-	// Destination
+{1972}{Art: 368, Palette: 1, Scale: 100%, Blend: Add, Sound: 24070, Flags: overlay_f | animates, Light: 1, Light Color:  (210 @ 199 @ 67)}	// Destination
+{1973}{Art: 368, Palette: 1, Scale: 100%, Blend: Add, Flags: overlay_f | animates | anim_forever}	// Secondary Destination
+{1974}{}	// Secondary Casting
+
+// 198 -- Tech: mtTechKnockOutGas
+{1980}{}	// Cast
+{1981}{}	// Projectile
+{1982}{Art: 55, Palette: 1, Scale: 100%, Blend: Add, Sound: 8808, Flags: overlay_f | animates}	// Destination
+{1983}{}	// Secondary Destination
+{1984}{}	// Secondary Casting
+
+// 199 -- Tech: mtTechExplodeElectrical
+{1990}{}	// Cast
+{1991}{}	// Projectile
+{1992}{Art: 150, Palette: 1, Scale: 100%, Blend: Add, Sound: 24105, Flags: overlay_fb | animates, Light: 8}	// Destination
+{1993}{Art: 349, Palette: 1, Scale: 100%, Blend: Add, Flags: overlay_f | animates, Light: 1}	// Secondary Destination
+{1994}{}	// Secondary Casting
+
+// 200 -- Tech: mtTechMustardGas
+{2000}{}	// Cast
+{2001}{}	// Projectile
+{2002}{Art: 55, Palette: 1, Scale: 100%, Blend: Add, Sound: 8808, Flags: overlay_f | animates}	// Destination
+{2003}{Art: 55, Palette: 2, Scale: 100%, Blend: Add, Flags: overlay_f | animates | anim_forever}	// Secondary Destination
+{2004}{}	// Secondary Casting
+
+// 201 -- Tech: mtTechExplodeConcussion
+{2010}{}	// Cast
+{2011}{}	// Projectile
+{2012}{Art: 350, Palette: 1, Scale: 100%, Blend: Add, Sound: 8808, Flags: overlay_f | animates, Light: 1, Light Color:   (242 @ 165 @ 0)}	// Destination
+{2013}{Art: 349, Palette: 1, Scale: 100%, Blend: Add, Flags: overlay_f | animates}	// Secondary Destination
+{2014}{}	// Secondary Casting
+
+// 202 -- Tech: mtTechExplodeParalysis
+{2020}{}	// Cast
+{2021}{}	// Projectile
+{2022}{Art: 368, Palette: 1, Scale: 100%, Blend: Add, Sound: 24070, Flags: overlay_f | animates, Light: 1, Light Color:  (210 @ 199 @ 67)}	// Destination
+{2023}{Art: 368, Palette: 1, Scale: 100%, Blend: Add, Flags: overlay_f | animates | anim_forever}	// Secondary Destination
+//-2022--Art: 349, Palette: 1, Scale: 100%, Blend: Add, Flags: overlay_f | animates, Light: 1-	// Destination
+//-2023---	// Secondary Destination
+{2024}{}	// Secondary Casting
+
+// 203 -- Tech: Grenade Launcher
+{2030}{}	// Cast
+{2031}{}	// Projectile
+{2032}{Art: 350, Palette: 1, Scale: 100%, Blend: Add, Sound: 8808, Flags: overlay_f | animates, Light: 1, Light Color:   (242 @ 165 @ 0)}	// Destination
+{2033}{Art: 349, Palette: 1, Scale: 100%, Blend: Add, Flags: overlay_f | animates}	// Secondary Destination
+{2034}{}	// Secondary Casting
+
+// 204 -- Tech:  Tranquilizer Gun
+{2040}{}	// Cast
+{2041}{}	// Projectile
+{2042}{Art: 368, Palette: 1, Scale: 100%, Blend: Add, Sound: 24070, Flags: overlay_f | animates, Light: 1, Light Color:  (210 @ 199 @ 67)}	// Destination
+{2043}{}	// Secondary Destination
+{2044}{}	// Secondary Casting
+
+// 205 -- Tech: Grenade Launcher Part II
+{2050}{}	// Cast
+{2051}{}	// Projectile
+{2052}{Art: 350, Palette: 1, Scale: 100%, Blend: Add, Sound: 8808, Flags: overlay_f | animates, Light: 1, Light Color:   (242 @ 165 @ 0)}	// Destination
+{2053}{Art: 349, Palette: 1, Scale: 100%, Blend: Add, Flags: overlay_f | animates}	// Secondary Destination
+{2054}{}	// Secondary Casting
+
+// 206 -- Tech: Vivifier
+{2060}{}	// Cast
+{2061}{}	// Projectile
+{2062}{}	// Destination
+{2063}{}	// Secondary Destination
+{2064}{}	// Secondary Casting
+
+
+
+//
+// Item-Only Spells Part 2
+//
+
+
+// 207 -- MI2: Kerghan's Death Spell
+{2070}{Art: 392, Palette: 0, Scale: 100%, Blend: Add, Sound: 8825, Flags: overlay_fb | animates}	// Cast
+{2071}{}	// Projectile
+{2072}{Art: 393, Palette: 1, Scale: 100%, Blend: Add, Sound: 8820, Flags: overlay_fb | animates, Light: 1, Light Color:  (255 @ 10 @ 10)}	// Destination
+{2073}{}	// Secondary Destination
+{2074}{}	// Secondary Casting
+
+// 208 -- MI2: Kerghan's Attack Spell
+{2080}{Art: 392, Palette: 0, Scale: 100%, Blend: Add, Sound: 8825, Flags: overlay_fb | animates}	// Cast
+{2081}{}	// Projectile
+{2082}{Art: 396, Palette: 1, Scale: 100%, Blend: Add, Sound: 8821, Flags: overlay_f | animates, Light: 1, Light Color: (255 @ 50 @ 50)}	// Destination
+{2083}{}	// Secondary Destination
+{2084}{}	// Secondary Casting
+
+// 209 -- MI2: Kerghan's Heal Spell
+{2090}{}	// Cast
+{2091}{}	// Projectile
+{2092}{Art: 391, Palette: 1, Scale: 100%, Blend: Add, Sound: 8823, Flags: overlay_f | animates, Light: 1, Light Color: (27 @ 183 @ 255)}	// Destination
+{2093}{Art: 390, Palette: 1, Scale: 100%, Blend: Add, Flags: overlay_f | animates | anim_forever, Light: 1, Light Color: (27 @ 183 @ 255)}	// Secondary Destination
+{2094}{}	// Secondary Casting
+{2095}{Art: 394, Palette: 1, Scale: 100%, Blend: Add, Sound: 8822, Flags: overlay_f | animates}	// Damage FX
+
+// 210 -- MI2: mtMI2PotionFatigueSlower
+{2100}{}	// Cast
+{2101}{}	// Projectile
+{2102}{Art: 9, Palette: 1, Scale: 100%, Blend: Add, Flags: overlay_f | animates, Light: 1, Light Color:  (0 @ 96 @ 204)}	// Destination
+{2103}{}	// Secondary Destination
+{2104}{}	// Secondary Casting
+
+// 211 -- MI2: mtMI2PotionEssenceOfIntellect
+{2110}{}	// Cast
+{2111}{}	// Projectile
+{2112}{Art: 9, Palette: 1, Scale: 100%, Blend: Add, Flags: overlay_f | animates, Light: 1, Light Color:  (0 @ 96 @ 204)}	// Destination
+{2113}{}	// Secondary Destination
+{2114}{}	// Secondary Casting
+
+// 212 -- MI2: mtMI2PotionHaste
+{2120}{}	// Cast
+{2121}{}	// Projectile
+{2122}{Art: 339, Palette: 1, Scale: 100%, Blend: Add, Flags: overlay_fb | animates, Light: 1, Light Color:  (210 @ 199 @ 67)}	// Destination
+{2123}{Art: 340, Palette: 1, Scale: 100%, Blend: Add, Flags: overlay_fb | animates | anim_forever}	// Secondary Destination
+{2124}{}	// Secondary Casting
+
+// 213 -- MI2: mtMI2PotionLiquidOfSkinThickening
+{2130}{}	// Cast
+{2131}{}	// Projectile
+{2132}{Art: 9, Palette: 1, Scale: 100%, Blend: Add, Flags: overlay_f | animates, Light: 1, Light Color:  (0 @ 96 @ 204)}	// Destination
+{2133}{}	// Secondary Destination
+{2134}{}	// Secondary Casting
+
+// 214 -- MI2: mtMI2PotionKalispisVenom
+{2140}{}	// Cast
+{2141}{}	// Projectile
+{2142}{Art: 9, Palette: 1, Scale: 100%, Blend: Add, Flags: overlay_f | animates, Light: 1, Light Color:  (0 @ 96 @ 204)}	// Destination
+{2143}{}	// Secondary Destination
+{2144}{}	// Secondary Casting
+
+// 215 -- MI2: mtMI2PotionRestorative
+{2150}{}	// Cast
+{2151}{}	// Projectile
+{2152}{Art: 9, Palette: 1, Scale: 100%, Blend: Add, Flags: overlay_f | animates, Light: 1, Light Color:  (0 @ 96 @ 204)}	// Destination
+{2153}{}	// Secondary Destination
+{2154}{}	// Secondary Casting
+
+// 216 -- MI2: mtMI2ConjureSpiritPermanent
+{2160}{Art: 235, Palette: 0, Scale: 100%, Blend: Add, Sound: 20030, Flags: overlay_fb | animates, Light: 1, Light Color:  (255 @ 50 @ 50)}	// Cast
+{2161}{}	// Projectile
+{2162}{Art: 242, Palette: 1, Scale: 100%, Blend: Add, Flags: overlay_f | animates, Light: 1, Light Color:  (255 @ 50 @ 50)}	// Destination
+{2163}{Art: 243, Palette: 1, Scale: 100%, Blend: Add, Flags: overlay_f | animates | anim_forever, Light: 1, Light Color:  (255 @ 50 @ 50)}	// Secondary Destination
+{2164}{}	// Secondary Casting
+
+// 217 -- MI2: Phantom Knight Death
+{2170}{}	// Cast
+{2171}{}	// Projectile
+{2172}{Art: 428, Palette: 1, Scale: 100%, Blend: Add, Flags: overlay_f | animates, Light: 1, Light Color:   (242 @ 165 @ 0)}	// Destination
+{2173}{}	// Secondary Destination
+{2174}{}	// Secondary Casting
+
+// 218 -- MI2: Teleport Exit
+{2180}{Art:25, Palette: 1, Scale: 100%, Blend: Add, Sound: 9053, Flags: overlay_fb | animates, Light: 1, Light Color:  (187 @ 0 @ 215)}	// Cast
+{2181}{}	// Projectile
+{2182}{Art:25, Palette: 1, Scale: 100%, Blend: Add, Sound: 9053, Flags: overlay_fb | animates, Light: 1, Light Color:  (187 @ 0 @ 215)}	// Destination
+{2183}{}	// Secondary Destination
+{2184}{}	// Secondary Casting
+
+// 219 -- MI2: Molotov Cocktail
+{2190}{}	// Cast
+{2191}{}	// Projectile
+{2192}{Art: 350, Palette: 1, Scale: 100%, Blend: Add, Sound: 8808, Flags: overlay_f | animates, Light: 1, Light Color:   (242 @ 165 @ 0)}	// Destination
+{2193}{Art: 349, Palette: 1, Scale: 100%, Blend: Add, Flags: overlay_f | animates}	// Secondary Destination
+{2194}{}	// Secondary Casting
+
+// 220 -- MI2: Time Bomb
+{2200}{}	// Cast
+{2201}{}	// Projectile
+{2202}{Art: 350, Palette: 1, Scale: 100%, Blend: Add, Sound: 8808, Flags: overlay_f | animates, Light: 1, Light Color:   (242 @ 165 @ 0)}	// Destination
+{2203}{Art: 349, Palette: 1, Scale: 100%, Blend: Add, Flags: overlay_f | animates}	// Secondary Destination
+{2204}{}	// Secondary Casting
+
+// 221 -- MI2: Quench Life (Full)
+{2210}{Art: 235, Palette: 0, Scale: 125%, Blend: Add, Sound: 20050, Flags: overlay_fb | animates, Light: 1, Light Color:  (255 @ 50 @ 50)}	// Cast
+{2211}{}	// Projectile
+{2212}{Art: 248, Palette: 1, Scale: 100%, Blend: Add, Flags: overlay_fb | animates, Light: 1, Light Color:  (255 @ 50 @ 50)}	// Destination
+{2213}{}	// Secondary Destination
+{2214}{}	// Secondary Casting
+
+// 222 -- MI2: Wolf Form (Permanent)
+{2220}{}	// Cast
+{2221}{}	// Projectile
+{2222}{}	// Destination
+{2223}{}	// Secondary Destination
+{2224}{}	// Secondary Casting
+
+// 223 -- MI2: PLACEHOLDER
+//-2230---	// Cast
+//-2231---	// Projectile
+//-2232---	// Destination
+//-2233---	// Secondary Destination
+//-2234---	// Secondary Casting
+
+// 224 -- MI2: PLACEHOLDER
+{2240}{}	// Cast
+{2241}{}	// Projectile
+{2242}{}	// Destination
+{2243}{}	// Secondary Destination
+{2244}{}	// Secondary Casting
+
+// 225 -- MI2: PLACEHOLDER
+{2250}{}	// Cast
+{2251}{}	// Projectile
+{2252}{}	// Destination
+{2253}{}	// Secondary Destination
+{2254}{}	// Secondary Casting
+
+// 226 -- MI2: PLACEHOLDER
+{2260}{}	// Cast
+{2261}{}	// Projectile
+{2262}{}	// Destination
+{2263}{}	// Secondary Destination
+{2264}{}	// Secondary Casting
+
+// 227 -- MI2: PLACEHOLDER
+{2270}{}	// Cast
+{2271}{}	// Projectile
+{2272}{}	// Destination
+{2273}{}	// Secondary Destination
+{2274}{}	// Secondary Casting
+
+// 228 -- MI2: PLACEHOLDER
+{2280}{}	// Cast
+{2281}{}	// Projectile
+{2282}{}	// Destination
+{2283}{}	// Secondary Destination
+{2284}{}	// Secondary Casting
+
+// 229 -- MI2: PLACEHOLDER
+{2290}{}	// Cast
+{2291}{}	// Projectile
+{2292}{}	// Destination
+{2293}{}	// Secondary Destination
+{2294}{}	// Secondary Casting
+
+// 230 -- MI2: PLACEHOLDER
+{2300}{}	// Cast
+{2301}{}	// Projectile
+{2302}{}	// Destination
+{2303}{}	// Secondary Destination
+{2304}{}	// Secondary Casting
+
+// 231 -- MI2: PLACEHOLDER
+{2310}{}	// Cast
+{2311}{}	// Projectile
+{2312}{}	// Destination
+{2313}{}	// Secondary Destination
+{2314}{}	// Secondary Casting
+
+// 232 -- MI2: PLACEHOLDER
+{2320}{}	// Cast
+{2321}{}	// Projectile
+{2322}{}	// Destination
+{2323}{}	// Secondary Destination
+{2324}{}	// Secondary Casting
+
+// 233 -- MI2: PLACEHOLDER
+{2330}{}	// Cast
+{2331}{}	// Projectile
+{2332}{}	// Destination
+{2333}{}	// Secondary Destination
+{2334}{}	// Secondary Casting
+
+// 234 -- MI2: PLACEHOLDER
+{2340}{}	// Cast
+{2341}{}	// Projectile
+{2342}{}	// Destination
+{2343}{}	// Secondary Destination
+{2344}{}	// Secondary Casting
+
+// 235 -- MI2: PLACEHOLDER
+{2350}{}	// Cast
+{2351}{}	// Projectile
+{2352}{}	// Destination
+{2353}{}	// Secondary Destination
+{2354}{}	// Secondary Casting
+
+// 236 -- MI2: PLACEHOLDER
+{2360}{}	// Cast
+{2361}{}	// Projectile
+{2362}{}	// Destination
+{2363}{}	// Secondary Destination
+{2364}{}	// Secondary Casting
+
+// 237 -- MI2: PLACEHOLDER
+{2370}{}	// Cast
+{2371}{}	// Projectile
+{2372}{}	// Destination
+{2373}{}	// Secondary Destination
+{2374}{}	// Secondary Casting
+
+// 238 -- MI2: PLACEHOLDER
+{2380}{}	// Cast
+{2381}{}	// Projectile
+{2382}{}	// Destination
+{2383}{}	// Secondary Destination
+{2384}{}	// Secondary Casting
+
+// 239 -- MI2: PLACEHOLDER
+{2390}{}	// Cast
+{2391}{}	// Projectile
+{2392}{}	// Destination
+{2393}{}	// Secondary Destination
+{2394}{}	// Secondary Casting
+
+// 240 -- MI2: PLACEHOLDER
+{2400}{}	// Cast
+{2401}{}	// Projectile
+{2402}{}	// Destination
+{2403}{}	// Secondary Destination
+{2404}{}	// Secondary Casting
+
+// 241 -- MI2: PLACEHOLDER
+{2410}{}	// Cast
+{2411}{}	// Projectile
+{2412}{}	// Destination
+{2413}{}	// Secondary Destination
+{2414}{}	// Secondary Casting
+
+// 242 -- MI2: PLACEHOLDER
+{2420}{}	// Cast
+{2421}{}	// Projectile
+{2422}{}	// Destination
+{2423}{}	// Secondary Destination
+{2424}{}	// Secondary Casting
+
+// 243 -- MI2: PLACEHOLDER
+{2430}{}	// Cast
+{2431}{}	// Projectile
+{2432}{}	// Destination
+{2433}{}	// Secondary Destination
+{2434}{}	// Secondary Casting

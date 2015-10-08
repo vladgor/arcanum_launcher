@@ -1,0 +1,19 @@
+last launch  08\10\2015, 19:16:42
+launcher version: 0.6.0.1
+-------------------------------
+
+
+installing GrandFix + MiniFix 2
+---
+>mod name: GrandFix + MiniFix 2
+>downloading from "http://www.x1a7.ru/arcanumLauncher/mods/gf/Grand%20Fix.zip"
+>downloading to "C:\Users\Администратор\AppData\Local\Temp\ArcanumLauncher\4694440.zip"
+Thread was successfully created
+Receiving file...
+Directory "mods\GrandFix + MiniFix 2\" was created
+Unzipping file...
+Success!
+Temp file deleted
+
+
+

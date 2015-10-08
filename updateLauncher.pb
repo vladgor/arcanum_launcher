@@ -3,7 +3,7 @@
 ;returns new version of launcher, if current version is not actual anymore
 ;else procedure return 0
 Procedure.s checkLauncherForUpdate()
-  newVersion.s = readHTTPFile("http://www.x1a7.ru/arcanumLauncher/version.txt")
+  newVersion.s = readFromHTTPFile("http://www.x1a7.ru/arcanumLauncher/version.txt")
   If newVersion <> lVersion
     ProcedureReturn newVersion
   Else
@@ -38,9 +38,8 @@ Procedure.i updateLauncher()
   
   ProcedureReturn #False
 EndProcedure
-; IDE Options = PureBasic 5.11 (Windows - x86)
-; CursorPosition = 25
-; FirstLine = 6
+; IDE Options = PureBasic 5.31 (Windows - x86)
+; CursorPosition = 5
 ; Folding = -
 ; EnableXP
 ; EnablePurifier

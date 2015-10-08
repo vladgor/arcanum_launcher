@@ -1,0 +1,37 @@
+User portraits are indexed from a message file called data\portrait\userport.mes that begins with message 1.  
+You may have to create this file. Simply make a new text file and change the extension from txt to mes.
+
+Each portrait is a 256 color BMP file that is 64 x 64 pixels. It's name
+should have a three letter prefix which is 2 letters for race and one
+letter for gender. This prefix defines which race-gender combination of a PC
+or NPC can use this portrait.
+
+The race prefixes are
+HU - human
+DW - dwarf
+EL - elf
+HE - half elf
+GN - gnome
+HA - halfling
+HO - half orc
+HG - half ogre
+
+The gender prefixes are
+M - male
+F - female
+
+Special prefixes
+NPC - this portrait is useable only by NPC's, regardless of race or gender
+ANY - anyone (PC or NPC of any race or gender) can use this portrait
+
+Examples::
+{1}{ELM1} means there is a portrait named data/portrait/ELM1.bmp which is
+only available to elf males
+{2}{ANYpretty} means there is a portrait named data/portrait/ANYpretty.bmp
+which is useable by anyone
+{3}{NPCbob} means there is a portrait named data/portrait/NPCbob.bmp that is
+avialable to any NPC but not to PC's
+
+For the larger versions of the portraits you can create a 128x128 BMP and append "_b" to its name. So if you have a regular portrait file called ELM1.bmp  you can create another called ELM1_b.bmp to be used for the bigger portrait. This does not have to be added to the userport.mes file, the game will automatically detect and use it. If the _b file does not exist, the game will simply scale up the smaller version.
+
+Tim.

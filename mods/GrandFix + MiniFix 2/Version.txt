@@ -1,0 +1,4 @@
+Sierra On-Line
+DATE:Sept 2001
+TITLE:Arcanum
+VERSION:1.0.7.4

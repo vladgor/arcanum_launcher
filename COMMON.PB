@@ -141,6 +141,14 @@ Procedure checkConnection(host.s, port.i)
   EndIf
 EndProcedure
 
+Procedure runOnlyOneInstance()
+  *a = CreateSemaphore_(NULL, 0, 1, GetProgramName()) 
+  If *a <> 0 And GetLastError_()= #ERROR_ALREADY_EXISTS
+    MessageRequester("Error", localMsgCantRunSeveralCopies, #MB_ICONERROR)
+    CloseHandle_(*a) 
+    End
+  EndIf
+EndProcedure
 
 Procedure findMod(name.s)
   name = LCase(name)
@@ -152,7 +160,7 @@ Procedure findMod(name.s)
   ProcedureReturn #False
 EndProcedure
 
-Procedure.s readHTTPFile(file.s) ;необходимо быть в папке с файлом
+Procedure.s readFromHTTPFile(file.s) ;необходимо быть в папке с файлом
   output.s = ""
   pathToDownload.s = GetTemporaryDirectory() + "ArcanumLauncher\" + Str(Random(10000000)) + ".txt"
   
@@ -163,12 +171,12 @@ Procedure.s readHTTPFile(file.s) ;необходимо быть в папке с файлом
   If ReceiveHTTPFile(file, pathToDownload)
     If ReadFile(1, pathToDownload)
       While Eof(1) = 0 
-        output = output + ReadString(1) + Chr(13)
+        output = output + ReadString(1, #PB_UTF8) + Chr(10) + Chr(13)
       Wend        
     Else
       ProcedureReturn ""
     EndIf
-    output = Left(output,Len(output)-1)
+    output = Left(output, Len(output) - 1)
     CloseFile(1)
     DeleteFile(pathToDownload)
     ProcedureReturn output
@@ -176,9 +184,85 @@ Procedure.s readHTTPFile(file.s) ;необходимо быть в папке с файлом
     ProcedureReturn ""
   EndIf
 EndProcedure
+
+Procedure.s UnicodeToAscii(src.s)
+  output.s
+  slen = Len(src)
+  For i = 0 To slen
+    output = output + Chr(Asc(Mid(src, i, 1)))
+  Next i
+  
+  ProcedureReturn output
+EndProcedure
+  
+
+Procedure.i ExtractFilesFromZip(src.s, path.s)
+  pathLen = Len(path)
+  If Left(path, 1) = "\"
+    path = Right(path, pathLen - 1)
+  EndIf
+            
+  If Right(path, 1) <>  "\"
+    path = path + "\"
+  EndIf
+  
+  If FileSize(path) <> -2
+    mkDir(path)
+  EndIf       
+
+  If OpenPack(0, src, #PB_PackerPlugin_Zip) 
+    If ExaminePack(0)
+      While NextPackEntry(0)
+        If PackEntryType(0) = #PB_Packer_Directory
+          If FileSize(path + PackEntryName(0)) <> -2
+            mkDir(path + PackEntryName(0))
+          EndIf
+        Else
+          Debug UnicodeToAscii(PackEntryName(0))
+          UncompressPackFile(0, path + PackEntryName(0))
+        EndIf
+      Wend
+    Else
+      ProcedureReturn #Null
+    EndIf
+    ClosePack(0)
+  Else
+    ProcedureReturn #Null
+  EndIf
+  
+  ProcedureReturn 1
+EndProcedure
+
+Procedure.i AddFilesToZip(pack.i, path.s, pattern.s)
+  If Right(path, 1) <> "\"
+    path = path + "\"
+  EndIf
+  
+  index.i = ExamineDirectory(#PB_Any, path, pattern)
+  If index
+    While NextDirectoryEntry(index)
+      filename.s = DirectoryEntryName(index)
+      If DirectoryEntryName(index) = "." Or DirectoryEntryName(index) = ".."
+        Continue
+      EndIf
+      
+      If DirectoryEntryType(index) = #PB_DirectoryEntry_File
+        AddPackFile(pack, path + filename, path + filename)
+      Else
+        AddFilesToZip(pack, path + filename, "*.*")
+      EndIf
+    Wend
+    FinishDirectory(index)
+  Else
+    ProcedureReturn #Null
+  EndIf
+  
+  ProcedureReturn 1
+EndProcedure
 ;}
-; IDE Options = PureBasic 5.11 (Windows - x86)
-; CursorPosition = 26
-; Folding = BA-
+; IDE Options = PureBasic 5.31 (Windows - x86)
+; CursorPosition = 219
+; FirstLine = 58
+; Folding = Dgs
 ; EnableXP
-; Executable = C:\Documents and Settings\vladgor\Рабочий стол\launcher.exe
+; Executable = C:\Users\Р С’Р Т‘Р СР С‘Р Р…Р С‘РЎРѓРЎвЂљРЎР‚Р В°РЎвЂљР С•РЎР‚\Desktop\111\launcher.exe

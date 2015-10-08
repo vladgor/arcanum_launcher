@@ -1,0 +1,857 @@
+{0}{cursor.art}
+{1}{cur_del.art}
+{2}{Black.ART}
+{3}{intrface.art}//
+{4}{bar.art}
+{5}{amocnt_s.art}
+{6}{bgrn_but.art}
+{7}{mess_rot.art}
+{8}{spell_ro.art}
+{9}{m_dnbut.art}
+{10}{m_upbut.art}
+{11}{s_conveyance.art}
+{12}{s_conveyance1.art}
+{13}{s_conveyance2.art}
+{14}{s_conveyance3.art}
+{15}{s_conveyance4.art}
+{16}{s_conveyance5.art}
+{17}{yelovial.art}----
+{18}{redvial.art}----
+{19}{bluvial.art}----
+{20}{clrvial.art}
+{21}{spellcur.art}
+{22}{char_maint.art}
+{23}{char_minus.art}
+{24}{char_plus.art}
+{25}{rollerfont.art}
+{26}{arial10font.art}
+{27}{morph15font.art}
+{28}{pork12font.art}
+{29}{Skills_Window.ART}
+{30}{Disciplines_Window.ART}
+{31}{char_spells.art}
+{32}{cncl_big.art}
+{33}{done_big.art}
+{34}{char_Common_Skills.art}
+{35}{char_Tech_Skills.art}
+{36}{char_Spells_Skills.art}
+{37}{casablanca16font.art}
+{38}{s_air.art}
+{39}{s_air1.art}
+{40}{s_air2.art}
+{41}{s_air3.art}
+{42}{s_air4.art}
+{43}{s_air5.art}
+{44}{s_divination.art}
+{45}{s_divination1.art}
+{46}{s_divination2.art}
+{47}{s_divination3.art}
+{48}{s_divination4.art}
+{49}{s_divination5.art}
+{50}{s_fire.art}
+{51}{s_fire1.art}
+{52}{s_fire2.art}
+{53}{s_fire3.art}
+{54}{s_fire4.art}
+{55}{s_fire5.art}
+{56}{s_forc.art}
+{57}{s_force1.art}
+{58}{s_force2.art}
+{59}{s_force3.art}
+{60}{s_force4.art}
+{61}{s_force5.art}
+{62}{s_meta.art}
+{63}{s_meta1.art}
+{64}{s_meta2.art}
+{65}{s_meta3.art}
+{66}{s_meta4.art}
+{67}{s_meta5.art}
+{68}{s_morph.art}
+{69}{s_morph1.art}
+{70}{s_morph2.art}
+{71}{s_morph3.art}
+{72}{s_morph4.art}
+{73}{s_morph5.art}
+{74}{s_nature.art}
+{75}{s_nature1.art}
+{76}{s_nature2.art}
+{77}{s_nature3.art}
+{78}{s_nature4.art}
+{79}{s_nature5.art}
+{80}{s_phantasm.art}
+{81}{s_phantasm1.art}
+{82}{s_phantasm2.art}
+{83}{s_phantasm3.art}
+{84}{s_phantasm4.art}
+{85}{s_phantasm5.art}
+{86}{s_water.art}
+{87}{s_water1.art}
+{88}{s_water2.art}
+{89}{s_water3.art}
+{90}{s_water4.art}
+{91}{s_water5.art}
+{92}{s_earth.art}
+{93}{s_earth1.art}
+{94}{s_earth2.art}
+{95}{s_earth3.art}
+{96}{s_earth4.art}
+{97}{s_earth5.art}
+{98}{s_mental.art}
+{99}{s_mental1.art}
+{100}{s_mental2.art}
+{101}{s_mental3.art}
+{102}{s_mental4.art}
+{103}{s_mental5.art}
+{104}{s_evilnecro.art}
+{105}{s_evilnecro1.art}
+{106}{s_evilnecro2.art}
+{107}{s_evilnecro3.art}
+{108}{s_evilnecro4.art}
+{109}{s_evilnecro5.art}
+{110}{s_goodnecro.art}
+{111}{s_goodnecro1.art}
+{112}{s_goodnecro2.art}
+{113}{s_goodnecro3.art}
+{114}{s_goodnecro4.art}
+{115}{s_goodnecro5.art}
+{116}{s_summoning.art}
+{117}{s_summoning1.art}
+{118}{s_summoning2.art}
+{119}{s_summoning3.art}
+{120}{s_summoning4.art}
+{121}{s_summoning5.art}
+{122}{s_temporal.art}
+{123}{s_temporal1.art}
+{124}{s_temporal2.art}
+{125}{s_temporal3.art}
+{126}{s_temporal4.art}
+{127}{s_temporal5.art}
+{128}{skill_ro.art}
+{129}{tech_sk_small.art}
+{130}{comm_sk_small.art}
+{131}{hotkeybk.art}
+{132}{empty.art}
+{133}{intcedit.art}
+{134}{intinven.art}
+{135}{intlog.art}
+{136}{intmap.art}
+{137}{lilgrnbut.art}
+{138}{mapmain.art}
+{139}{navbutton.art}
+{140}{wp_main.art}
+{141}{mm_chest.art}
+{142}{mm_note.art}
+{143}{mm_ques.art}
+{144}{mm_skull.art}
+{145}{mmb_chest.art}
+{146}{mmb_note.art}
+{147}{mmb_ques.art}
+{148}{mmb_skull.art}
+{149}{wm_tile_00.art}----
+{150}{wm_tile_01.art}----
+{151}{wm_tile_02.art}----
+{152}{wm_tile_03.art}----
+{153}{wm_tile_04.art}----
+{154}{wm_tile_05.art}----
+{155}{wm_tile_06.art}----
+{156}{wm_tile_07.art}----
+{157}{wm_tile_00_msk.art}----
+{158}{wm_tile_01_msk.art}----
+{159}{wm_tile_02_msk.art}----
+{160}{wm_tile_03_msk.art}----
+{161}{wm_tile_04_msk.art}----
+{162}{wm_tile_05_msk.art}----
+{163}{wm_tile_06_msk.art}----
+{164}{wm_tile_07_msk.art}----
+{165}{AmoCnt_B.ART}
+{167}{Amo_Rol.ART}
+{168}{Amo_RolX.ART}
+{169}{Char_But.ART}---
+{170}{Char_ON.ART}---
+{171}{Cloister18Font.ART}
+{172}{HKSlt0.ART}----
+{173}{HKSlt1.ART}---
+{174}{HKSlt2.ART}
+{175}{HKSlt3.ART}
+{176}{HKSlt4.ART}
+{177}{HKSlt5.ART}
+{178}{HKSlt6.ART}
+{179}{HKSlt7.ART}
+{180}{HKSlt8.ART}
+{181}{HKSlt9.ART}
+{182}{HKTshOFF.ART}----
+{183}{HKTshON.ART}
+{184}{IntBotom.ART}----
+{185}{IntTop.ART}----
+{186}{Invn_But.ART}----
+{187}{Log_But.ART}----
+{188}{SplSlt1.ART}----
+{189}{SplSlt2.ART}
+{190}{SplSlt3.ART}
+{191}{SplSlt4.ART}
+{192}{SplSlt5.ART}
+{193}{TMap_But.ART}----
+{194}{WMap_But.ART}----
+{195}{WMap_ON.ART}
+{196}{Cmps_Bse.ART}
+{197}{CompassN.ART}
+{198}{PCWinCvr.ART}
+{199}{WP_Cover.ART}
+{200}{MpWt_Rot.ART}
+{201}{Cler_Big.ART}
+{202}{cncl_big.ART}
+{203}{done_big.ART}
+{204}{MM_Cross.ART}
+{205}{MM_Loc.ART}
+{206}{MM_WayP.ART}
+{207}{Clk_timestrip.ART}
+{208}{Clk_Moon1.ART}
+{209}{Clk_Moon2.ART}
+{210}{Clk_Moon3.ART}
+{211}{Clk_Moon4.ART}
+{212}{Clk_Moon5.ART}
+{213}{Clk_Moon6.ART}
+{214}{Clk_Moon7.ART}
+{215}{Clk_Moon8.ART}
+{216}{TimePnts.ART}
+{217}{Nav_Cvr.ART}
+{218}{Slp_Main.ART}
+{219}{Tmp_Day.ART}
+{220}{Tmp_Nght.ART}
+{221}{Inventor.ART}
+{222}{Char_PCC.ART}
+{223}{PDoll.ART}
+{224}{Drop_OFF.ART}
+{225}{Drop_ON.ART}
+{226}{ArialB12Font.art}
+{227}{Comic12Font.art}
+{228}{Elga12Font.art}
+{229}{Flare12Font.art}
+{230}{Flare14Font.art}
+{231}{Lns_Bart.art}
+{232}{Lns_Loot.art}
+{233}{Lns_Papr.art}
+{234}{Loot.art}
+{235}{Barter.art}
+{236}{Scrll_UP.art}
+{237}{Scrll_DWN.art}
+{238}{ScrllSlideT.art}
+{239}{ScrllSlideM.art}
+{240}{ScrllSlideB.art}
+{241}{CVR_Helmet.ART}
+{242}{CVR_Boot.ART}
+{243}{CVR_Gauntlet.ART}
+{244}{CVR_Armor.ART}
+{245}{CVR_Medalion.ART}
+{246}{CVR_Ring1.ART}
+{247}{CVR_Ring2.ART}
+{248}{CVR_Shield.ART}
+{249}{CVR_Weapon.ART}
+{250}{Ammo_Icon_Arrows.ART}
+{251}{Ammo_Icon_Bullets.ART}
+{252}{Ammo_Icon_Charges.ART}
+{253}{Ammo_Icon_Fuel.ART}
+{254}{align.art}
+{255}{MT_Apt.art}
+{256}{Item_Dam.art}
+{257}{SP_Minus.ART}
+{258}{SP_Plus.ART}
+{259}{Book_Karma.ART}
+{260}{Book_Main.ART}
+{261}{Book_Quests.ART}
+{262}{Book_Rumors.ART}
+{263}{Book_Side.ART}
+{264}{LogBooks_Side.ART}
+{265}{Tab_Note.ART}
+{266}{Tab_BlessCurse.ART}
+{267}{Tab_Quest.ART}
+{268}{Tab_BackGrnd.ART}
+{269}{Tab_Keys.ART}
+{270}{Tab_EgoInjure.ART}
+{271}{Tab_Rep.ART}
+{272}{PageTurn_L.ART}
+{273}{PageTurn_R.ART}
+{274}{Skill_Rot.ART}
+{275}{SKL_PickLock.ART}
+{276}{SKL_Heal.ART}
+{277}{SKL_Combine.ART}
+{278}{SKL_Repair.ART}
+{279}{SKL_Conceal.ART}
+{280}{SKL_PickPocket.ART}
+{281}{SKL_SilentMove.ART}
+{282}{SKL_Traps.ART}
+{283}{Big_Grn_L.ART}
+{284}{Big_Grn_R.ART}
+{285}{Comb_I1_cov.ART}
+{286}{Comb_I2_cov.ART}
+{287}{Comb_Result_cov.ART}
+{288}{Combine_Rot.ART}
+{289}{Trap_Button.ART}
+{290}{Trap_Rot.ART}
+{291}{Broadcast_Rot.art} xxx
+{292}{Fate_Base.ART}
+{293}{FateBut.ART}
+{294}{AP_Bar.ART}
+{295}{AP_Green.ART}
+{296}{AP_Orange.ART}
+{297}{EndTurn_But.ART}
+{298}{MultiMove_Base.ART}
+{299}{Sm_RightArrow.ART}
+{300}{Icons17Font.ART}
+{301}{Nick16Font.ART}
+{302}{Combat_But.ART}
+{303}{Thieving_But.ART}
+{304}{Social_But.ART}
+{305}{Technological_But.ART}
+{306}{Anatomical_But.ART}
+{307}{Chemistry_But.ART}
+{308}{Electrical_But.ART}
+{309}{Explosives_But.ART}
+{310}{GunSmithy_But.ART}
+{311}{Mechanical_But.ART}
+{312}{Smithy_But.ART}
+{313}{Therapeutics_But.ART}
+{314}{RollerTemplate.ART}
+{315}{AP_Red.ART}
+{316}{ScrllSLD_OFF.ART}
+{317}{ScrllUP.ART}
+{318}{ScrllDWN.ART}
+{319}{ScrllSLD_ON.ART}
+{320}{ChoosBack.ART}
+{321}{NextBut.ART}
+{322}{CharRace_Base.ART}
+{323}{BackBut.ART}
+{324}{ChoosCharRace.ART}
+{325}{ChoosPortCust.ART}
+{326}{PGC_DonnT.ART}
+{327}{Morph30Font.ART}
+{328}{MenuPlaque.ART}
+{329}{MainMenuBack.ART}
+{330}{MultiPlayerBack.ART}
+{331}{SinglePlayerBack.ART}
+{332}{PortSelect.ART}
+{333}{PortName_Base.ART}
+{334}{CharGears.ART}
+{335}{CharCreateBottomBar.ART}
+{336}{CharCreateTopBar.ART}
+{337}{Barter_PD.ART}
+{338}{PD_lil_butt.ART}
+{339}{Inven_lil_butt.ART}
+{340}{tiny_butt.ART}
+{341}{PD_Cover4Inven.ART}
+{342}{Use_Box_OFF.ART}
+{343}{Use_Box_ON.ART}
+{344}{Gamble_Box_ON.ART}
+{345}{Gamble_Box_OFF.ART}
+{346}{Gamble_Box_ILL.ART}
+{347}{Use_Box_ILL.ART}
+{348}{Drop_ILL.ART}
+{349}{Loot_PD.ART}
+{350}{jmp_iso.art}
+{351}{jmp_td.art}
+{352}{skillcur.art}
+{353}{battlecur.art}
+{354}{DialogueWindow.ART}
+{355}{Anatomical_Tab.ART}
+{356}{Chemistry_Tab.ART}
+{357}{CombineButt.ART}
+{358}{CombineIndicator1.ART}
+{359}{CombineIndicator2.ART}
+{360}{CombineIndicator3.ART}
+{361}{Electrical_Tab.ART}
+{362}{Explosives_Tab.ART}
+{363}{GunSmithy_Tab.ART}
+{364}{Mechanical_Tab.ART}
+{365}{Schematic_Base.ART}
+{366}{Schm_MechAracnid.ART} //Schematic Picture
+{367}{Schm_PC_Lens.ART}
+{368}{Smithy_Tab.ART}
+{369}{Theraputics_Tab.ART}
+{370}{Icons32Font.ART}
+{371}{CasablancaAntique30Font.ART}
+{372}{Schm_LArrow.ART}
+{373}{Schm_RArrow.ART}
+{374}{hover-pc.art}
+{375}{RaceHumanIcon.ART}// Human Icon
+{376}{RaceElfIcon.ART}// Elf Icon
+{377}{RaceHElfIcon.ART}// Half Elf Icon
+{378}{RaceDwarfIcon.ART}// Dwarf Icon
+{379}{RaceGnomeIcon.ART}// Gnome Icon
+{380}{RaceHalflingIcon.ART}// Halfling Icon
+{381}{RaceHOrcIcon.ART}// Half Orc Icon
+{382}{RaceHOgreIcon.ART}// Half Ogre Icon
+{383}{MonsterIcon.ART}// General Monster Icon
+{384}{Undead.art}// Undead Icon
+{385}{AnimalIcon.ART}// General Animal Icon
+{386}{Icon_LawfulGood.ART} // LGood Icon
+{387}{Icon_Good.ART}// CGood Icon
+{388}{Icon_Lawful.ART}// Neutral Icon
+{389}{Icon_Chaotic.ART}// CEvil Icon
+{390}{Icon_Evil.ART}// LEvil Icon
+{391}{GeneralMeleeIcon.art}// General Melee Icon
+{392}{MagicMeleeIcon.art}// Magic Melee Icon
+{393}{TechMeleeIcon.art}// Tech Melee Icon
+{394}{TechGunsIcon.art}// Tech Firearms Icon
+{395}{GeneralBowsIcon.art}// General Bows Icon
+{396}{MagicBowsIcon.art}// Magic Bows Icon
+{397}{TechBowsIcon.art}// Tech Bows Icon
+{398}{Arrows_Icon.ART}// Arrows Icon
+{399}{BulletsIcon.ART}// Bullets Icon
+{400}{ChargesIcon.ART}// Charges Icon
+{401}{FuelIcon.ART}// Fuel Icon
+{402}{GeneralClothes_Icon.ART}// General Clothes Icon
+{403}{MagicClothes_Icon.ART}// Magic Clothes Icon
+{404}{TechClothes_Icon.ART}// Tech Clothes Icon
+{405}{ShieldGeneralIcon.ART}// General Armour Icon
+{406}{ShieldMagicalIcon.ART}// Magic Armour  Icon
+{407}{ShieldTechIcon.ART}// Tech Armour Icon
+{408}{RobeGeneralIcon.ART}// General Robes Icon
+{409}{RobeMagicalIcon.ART}// Magic Robes Icon
+{410}{RobeTechIcon.ART}// Tech Robes Icon
+{411}{GeneralRingIcon.art}// General Ring Icon
+{412}{MagicRingIcon.art}// Magic Ring Icon
+{413}{TechRingIcon.art}// Tech Ring Icon
+{414}{GeneralMedalionIcon.art}// General Medallion Icon
+{415}{MagicMedalionIcon.art}// Magic Medallion Icon
+{416}{TechMedalionIcon.art}// Tech Medallion Icon
+{417}{CoinsIcon.ART}// Gold Icon
+{418}{IconPotions.ART}// Potions Icon
+{419}{IconTherapeutics.ART}// Therapeutics Icon
+{420}{IconHerbal.ART}// Anatomical Icon
+{421}{Chemical_Icon.ART}// Chemical Icon
+{422}{Spirits_Icon.ART}// Spirits Icon
+{423}{Food_Icon.ART}// Food Icon
+{424}{IconPoison.ART}// Poison Icon
+{425}{ScrollIcon.art}// Scroll Icon
+{426}{KeyIcon.art}// Key Icon
+{427}{Keyring_Icon.ART}// Key Ring Icon
+{428}{BooksIcon.ART}// Book Icon
+{429}{Note_Icon.ART}// Note Icon
+{430}{Telegram_Icon.ART}// Telegraph Icon
+{431}{Newpaper_Icon.ART}// Newspaper Icon
+{432}{LevelUpIcon.ART}// General Icon
+{433}{MagicksIcon.ART}// Magic Icon
+{434}{GeneralTechIcon.ART}// Tech Icon
+{435}{ContainerIcon.ART}// Container Icon
+{436}{Door_Icon.ART}// Door Icon
+{437}{LevelUpIcon.ART}// Scenery Icon
+{438}{LevelUpIcon.ART}// Level Up Icon
+{439}{Poisoned_Icon.ART}// Poisoned Icon
+{440}{HexedIcon.ART}// Cursed Icon
+{441}{BlessIcon.ART}// Blessed Icon
+{442}{Exclaimation_Icon.ART}// Exclamation Icon
+{443}{Question_Icon.ART}// Question Icon
+{444}{LevelUpIcon.ART}// Arcanum Icon	
+{445}{LevelUpIcon.ART}// Info Icon
+{446}{ConveyanceIcon.ART}// Conveyance Icon
+{447}{DivinationIcon.ART}// Divination Icon
+{448}{E_AirIcon.ART}// Elemental  Air Icon
+{449}{E_EarthIcon.ART}// Elemental  Earth Icon
+{450}{E_FireIcon.ART}// Elemental Fire Icon
+{451}{E_WaterIcon.ART}// Elemental Water Icon
+{452}{ForceIcon.ART}// Force Icon
+{453}{MentalIcon.ART}// Mental Icon
+{454}{MetaIcon.ART}// Meta Icon
+{455}{MorphIcon.ART}// Morph Icon
+{456}{NatureIcon.ART}// Nature Icon
+{457}{Necro_EvilIcon.ART}// Necromantic evil Icon
+{458}{Necro_GoodIcon.ART}// Necromantic good Icon
+{459}{PhantasmIcon.ART}// Phantasm Icon
+{460}{SommoningIcon.ART}// Summoning Icon
+{461}{TemporalIcon.ART}// Temporal Icon
+{462}{Schematic_Icon.ART}// Schematic Icon
+{463}{MesHealthBar_Full.art}
+{464}{MesHealthBar_Empty.art}
+{465}{MesFatigueBar_Full.art}
+{466}{MesFatigueBar_Empty.art}
+{467}{hoverunder.art}
+{468}{hoverover.art}
+{469}{Ammo_Icon_Mana.ART}
+{470}{Combat_Button.ART}
+{471}{Schematics_Button.ART}
+{472}{Skills_Button.ART}
+{473}{Spells_Button.ART}
+{474}{Ammo_Icon_Gold.ART}
+{475}{ts_iso.art}
+{476}{ts_td.art}
+{477}{BookBackground.ART}
+{478}{BookmanOldBold18Font.ART}
+{479}{ClarendonBLK18Font.ART}
+{480}{Courier10Font.ART}
+{481}{Garmond6Font.ART}
+{482}{Garmond8Font.ART}
+{483}{Garmond9Font.ART}
+{484}{Georgia30Font.ART}
+{485}{Zurich20Font.ART}
+{486}{LatinXCN30Font.ART}
+{487}{NewsBackground.ART}
+{488}{NewsIconsFont.ART}
+{489}{NoteBackground.ART}
+{490}{Swiss921Font.ART}
+{491}{TeleBackground.ART}
+{492}{Zurich16Font.ART}
+{493}{vssver.scc}
+{494}{WritenSideBar.ART}
+{495}{WrtnBookLArro.ART}
+{496}{WrtnBookRArro.ART}
+{497}{Pepper20Font.ART}
+{498}{Cursor_UP.ART}
+{499}{Cursor_DWN.ART}
+{500}{BookBackground.ART}
+{501}{FollowerArrow_DWN.ART}
+{502}{FollowerArrow_UP.ART}
+{503}{FollowerFrame.ART}
+{504}{FollowerFrame_FT.ART}
+{505}{FollowerFrame_HP.ART}
+{506}{Follow_Scroll_up.ART}
+{507}{Follow_Scroll_up_OFF.ART}
+{508}{Follow_Scroll_dwn.ART}
+{509}{Follow_Scroll_dwn_OFF.ART}
+{510}{acid_scheme.ART}
+{511}{animal_lure_scheme.ART}
+{512}{animal_scent_scheme.ART}
+{513}{boost_all_stats_scheme.ART}
+{514}{boost_mental_faculties_scheme.ART}
+{515}{clockwotk_decoy_scheme.ART}
+{516}{cure_all_scheme.ART}
+{517}{cure_poison_scheme.ART}
+{518}{dwarven_gauntlet_scheme.ART}
+{519}{electric_light_scheme.ART}
+{520}{elephant_gun_scheme.ART}
+{521}{ElitePlate_Schematic.ART}
+{522}{energizer_scheme.ART}
+{523}{explosive_grenade_scheme.ART}
+{524}{fatigue_limiter_scheme.ART}
+{525}{fatigue_restore_scheme.ART}
+{526}{fine_pistol.scheme.ART}
+{527}{fire_obstruction_scheme.ART}
+{528}{flash_grenadescheme.ART}
+{529}{folding_rifle_scheme.ART}
+{530}{hallicinite_scheme.ART}
+{531}{heal_accelerator_scheme.ART}
+{532}{heal_lite_scheme.ART}
+{533}{healing_jacket_scheme.ART}
+{534}{hushed_pistol_scheme.ART}
+{535}{intelligence_booster_scheme.ART}
+{536}{inv_mag_hat_scheme.ART}
+{537}{looking_glass_rifle_scheme.ART}
+{538}{magic_detector_scheme.ART}
+{539}{magic_detector02_scheme.ART}
+{540}{mechanized_gun_scheme.ART}
+{541}{perception_booster_scheme.ART}
+{542}{poison_scheme.ART}
+{543}{pure_ore_scheme.ART}
+{544}{repeater_rifle_scheme.ART}
+{545}{shocking_staff_scheme.ART}
+{546}{smoke_grenade_scheme.ART}
+{547}{strength_booster_scheme.ART}
+{548}{stun_grenade_scheme.ART}
+{549}{sword_of_balance_scheme.ART}
+{550}{telsa_rod_scheme.ART}
+{551}{ultralite_axe_scheme.ART}
+{552}{ultralite_axe_scheme_2.ART}
+{553}{ultralite_chain_mail_scheme.ART}
+{554}{wonder_drug_scheme.ART}
+{555}{hoverattack.art}
+{556}{OptionsMenuBack.ART}
+{557}{CreateYourOwn.ART}
+{558}{TMap_ON.ART}
+{559}{Invn_ON.ART}
+{560}{Log_ON.ART}
+{561}{Char_ON.ART}
+{562}{Blank_scheme.ART}
+{563}{MagickWeapon_Butt.ART}
+{564}{MagickWeapon_Rot.ART}
+{565}{Sleep_Base.ART}
+{566}{TarantSewer.ART}
+{567}{Scheme_Rot.ART}
+{568}{char_Schem_Skills.ART}
+{569}{Automaton_Schem.ART}
+{570}{man.ART}
+{571}{female.ART}
+{572}{elf.ART}
+{573}{elffemale.ART}
+{574}{dwarf.ART}
+{575}{gnome.ART}
+{576}{halfling.ART}
+{577}{halfelf.ART}
+{578}{femhalfelf.ART}
+{579}{halforc.ART}
+{580}{femhalforc.ART}
+{581}{halfogre.ART}
+{582}{Pen_BullsEye.ART}
+{583}{Pen_Cover.ART}
+{584}{Pen_Injury.ART}
+{585}{Pen_Light.ART}
+{586}{Pen_MSR.ART}
+{587}{Pen_Perception.ART}
+{588}{Pen_Range.ART}
+{589}{Bullets_scheme.ART}
+{590}{Charges_scheme.ART}
+{591}{fuel_scheme.ART}
+{592}{boost_all_stats_scheme.ART}
+{593}{S_Auto_Skeleton_Key.ART}
+{594}{S_bear_trap.ART}
+{595}{S_charged_ring.ART}
+{596}{S_dex_booster.ART}
+{597}{S_dynamite.ART}
+{598}{S_eye_gear.ART}
+{599}{S_spike_trap.ART}
+{600}{S_trap_springer.ART}
+{601}{loadindicator.art}
+{602}{Merwin.ART}
+{603}{Godfrey.ART}
+{604}{Horace.ART}
+{605}{Muck.ART}
+{606}{D'ren.ART}
+{607}{Solomon.ART}
+{608}{Merik.ART}
+{609}{Lugard.ART}
+{610}{Victoria.ART}
+{611}{Bel'an.ART}
+{612}{Clarisse.ART}
+{613}{Ke'ree.ART}
+{614}{tb_iso.ART}
+{615}{tb_td.ART}
+{616}{FollowerFrame_PO.ART}
+{617}{P_Crude_Flintlock.ART}
+{618}{hushed_revolver_schem.ART}
+{619}{Helmet_of_Vision_Schem.ART}
+{620}{TechCur.ART}
+{621}{revolver_schem.ART}
+{622}{Crude_Flintlock_schem.ART}
+{623}{SkilGauge.ART}
+{624}{SkilAddBut.ART}
+{625}{SkilMinusBut.ART}
+{626}{TarantMap.ART}
+{627}{Saltys_Map.ART}
+{628}{SP_Plugged1.ART}
+{629}{SP_Plugged2.ART}
+{630}{SP_Plugged3.ART}
+{631}{SP_Plugged4.ART}
+{632}{SP_Plugged5.ART}
+{633}{Stone_Plaque.ART}
+{634}{Icon_LawfulEvil.ART}
+
+{635}{BAN_Button.ART}
+{636}{Discon_Button.ART}
+{637}{Kick_BAN_Window.ART}
+{638}{MPly_AddBut.ART}
+{639}{MPly_KickBut.ART}
+{640}{MPly_PlaqueA.ART}
+{641}{PrivMes_ClsBut.ART}
+{642}{PrivMes_Window.ART}
+{643}{MPly_PlaqueB.ART}
+{644}{MultiPlay_DWN.ART}
+{645}{MultiPlay_UP.ART}
+{646}{Portrait_Highlight.ART}
+
+{647}{SpellTech_Add.ART}
+{648}{SpellTech_Minus.ART}
+{649}{TTI_Chem.ART}
+{650}{TTI_Electric.ART}
+{651}{TTI_Explosives.ART}
+{652}{TTI_Gun.ART}
+{653}{TTI_Herb.ART}
+{654}{TTI_Mechanical.ART}
+{655}{TTI_Smithy.ART}
+{656}{TTI_Theru.ART}
+
+{657}{SchemTitle_Chemical.ART}
+{658}{SchemTitle_Electric.ART}
+{659}{SchemTitle_Explosive.ART}
+{660}{SchemTitle_GunSmith.ART}
+{661}{SchemTitle_Herbal.ART}
+{662}{SchemTitle_Mechanical.ART}
+{663}{SchemTitle_Smithy.ART}
+{664}{SchemTitle_Threu.ART}
+
+{665}{MesPoisonedBar_Full.ART}
+{666}{MesPoisonedBar_Empty.ART}
+{667}{SldrButt_L_Arrow.ART}
+{668}{SldrButt_R_Arrow.ART}
+{669}{OptionsBase.ART}
+{670}{OptionsPCLens.art}
+{671}{OptionMultiChoice.ART}
+
+{672}{wp_iso.art}
+{673}{wp_td.art}
+
+{674}{Icon_TotalAttack.ART}
+{675}{Icon_TotalDefens.ART}
+{676}{TotalAttack.ART}
+{677}{TotalDefens.ART}
+
+{678}{scroll_not.art}
+{679}{scroll-0.art}
+{680}{scroll-1.art}
+{681}{scroll-2.art}
+{682}{scroll-3.art}
+{683}{scroll-4.art}
+{684}{scroll-5.art}
+{685}{scroll-6.art}
+{686}{scroll-7.art}
+
+{687}{Thorvaldsmap.ART}
+
+{688}{OptionSlider.ART}
+
+{689}{S_Wheel_Clan_Spectacles.ART}
+{690}{S_Invigorator.ART}
+{691}{S_Reanimator.ART}
+{692}{S_Clockwork_Physician.ART}
+{693}{S_Miracle_Cure.ART}
+{694}{S_Mental_Inhibitor.ART}
+{695}{S_Necromizer.ART}
+{696}{S_Fortifier.ART}
+{697}{S_Sleep_Aid.ART}
+{698}{S_Potion_of_Paralysis.ART}
+{699}{S_Charged_Sword.ART}
+{700}{S_Flow_Disruptor.ART}
+{701}{S_Tesla_Gun.ART}
+{702}{S_Bellringer.ART}
+{703}{S_Electro_Armor.ART}
+{704}{S_Pyrotechnic_Bow.ART}
+{705}{S_Knock_Out_Gas.ART}
+{706}{S_Hallucination_Grenade.ART}
+{707}{S_Electrocution_Grenade.ART}
+{708}{S_Grenade_Launcher.ART}
+{709}{S_Time_Bomb.ART}
+{710}{S_Concussion_Grenade.ART}
+{711}{S_Paralysis_Grenade.ART}
+{712}{S_Mustard_Gas_Grenade.ART}
+{713}{S_Plastique.ART}
+{714}{S_Detonator.ART}
+{715}{S_Acid_Gun.ART}
+{716}{S_Charged_Accelerator_Gun.ART}
+{717}{S_Pyrotechnic_Gun.ART}
+{718}{S_Blade_Launcher.ART}
+{719}{S_High_Velocity_Pistol.ART}
+{720}{S_Schrecks_Pistol.ART}
+{721}{S_Bronwycks_Gun.ART}
+{722}{S_Long_Range_Pistol.ART}
+{723}{S_Tranquilizer_Gun.ART}
+{724}{MachinedPlate_Schematic.ART}
+{725}{S_Compound_Bow.ART}
+{726}{S_Envenomed_Bow.ART}
+{727}{S_Medical_Arachnid.ART}
+{728}{S_Illuminated_Decoy.ART}
+{729}{S_Explosive_Decoy.ART}
+{730}{S_Automaton_Gunner.ART}
+{731}{S_Goggled_Helmet.ART}
+{732}{S_Envenomed_Sword.ART}
+{733}{S_Envenomed_Axe.ART}
+{734}{S_Miners_Helmet.ART}
+{735}{S_Pyrotechnic_Axe.ART}
+{736}{S_Rifled_Cannon.ART}
+{737}{S_Mechanical_Dagger.ART}
+{738}{S_Elixir_of_Hypnotic_Suggestion.ART}
+{739}{S_Brain_Builder.ART}
+{740}{S_Muscle_Maker.ART}
+{741}{S_Flame_Thrower.ART}
+{742}{S_Charges.ART}
+{743}{s_hand_cannon.ART}
+{744}{BookImagesFont.ART}
+{745}{SaveLoadBackground.ART}
+{746}{SaveLoadPCLens.ART}
+{747}{TextToggle.ART}
+{748}{SaveShotCover.ART}
+{749}{qintarramap.ART}
+{750}{MPServerListBackground.ART}
+{751}{BookmarkButt.ART}
+{752}{UnBookmarkButt.ART}
+{753}{MPCharacterSelectionBackground.ART}
+{754}{MPChatBackground.ART}
+{755}{MPConnectionSettingsCover.ART}
+{756}{MPCreateChatRoomBackground.ART}
+{757}{MPCycleLeftButton.ART}
+{758}{MPCycleRightButton.ART}
+{759}{MPMainMenu.ART}
+{760}{MPMessOfDayCover.ART}
+{761}{MPNewAccountCover.ART}
+{762}{MPRefreshButton.ART}
+{763}{SaltysMap.ART}
+{764}{TollosMap.ART}
+{765}{CreateCharacterBase.ART}
+{766}{PreGenCharacterBase.ART}
+{767}{s_Drochs_Warbringer.ART}
+{768}{s_vivifier.ART}
+{769}{s_Vendigrothian_War_Guantlets.ART}
+{770}{Char_HTFTMinus.ART}
+{771}{Char_HTFTPlus.ART}
+{772}{XP_GaugeMag.ART}
+{773}{XP_Pip1.ART}
+{774}{XP_Pip2.ART}
+{775}{XP_Pip3.ART}
+{776}{XP_Pip4.ART}
+{777}{XP_Pip5.ART}
+{778}{XP_Pip6.ART}
+{779}{XP_Pip7.ART}
+{780}{XP_Pip8.ART}
+{781}{XP_Pip9.ART}
+{782}{XP_Pip10.ART}
+{783}{IconCombatSkill.ART}
+{784}{IconThiveSkill.ART}
+{785}{IconSocialSkill.ART}
+{786}{IconWindow.ART}
+{787}{ScrllSlideM1.ART}
+{788}{TullaMural.ART}
+{789}{S_charged_axe.ART}
+{790}{S_noise_maker_decoy.ART}
+{791}{HexedMeleeicon.ART}Hexed Melee
+{792}{hexedBowIcon.ART}Hexed Bow
+{793}{HexedShieldicon.ART}Hexed Armour
+{794}{HexedClothesIcon.ART}Hexed Clothes
+{795}{hexedMedalionIcon.ART}Hexed Medalion
+{796}{HexedRingIcon.ART}Hexed Ring
+{797}{HexedRobesIcon.ART}Hexed Robes
+{798}{MPOptionsBackground.ART}
+{799}{CombatIcon.ART}
+{800}{ThievingIcon.ART}
+{801}{SocialIcon.ART}
+{802}{TechSkillIcon.ART}
+{803}{MazzerinsMystery.ART}
+{804}{OldChar_Minus.ART}
+{805}{OldChar_Plus.ART}
+{806}{MusicBoxMap.ART}
+{807}{Iron_Clan_Key_schematic.ART}
+{808}{TakeAllButt.ART}
+{809}{MP_TopOFF.ART}
+{810}{MP_TopON.ART}
+{811}{MapZoomBut.ART}
+{812}{MapWholeBut.ART}
+{813}{MapTravelBut.ART}
+{814}{MM_LocNew.ART}
+{815}{Euph30Font.ART}
+{816}{BloodStone.ART}
+{817}{vendnewsback.ART}
+{818}{Cursor-Called-Head.ART}
+{819}{Cursor-Called-Leg.ART}
+{820}{Cursor-Called-Arm.ART}
+{821}{Molitov_Schematic.ART}
+{822}{DialogueBox.ART}
+{823}{Lil_Accept.ART}
+{824}{Lil_Cancel.ART}
+{825}{Barter_Follower.ART}
+{826}{FollwerComandMenu.ART}
+{827}{FollowerCycleLeft.ART}
+{828}{FollowerCycleRight.ART}
+{829}{Vorman.ART}
+{830}{Schem_NO_Item.ART}
+{831}{Schem_Have_Item.ART}
+{832}{Cont_Junk.ART}
+{833}{Cont_Body.ART}
+{834}{Cont_Safe.ART}
+{835}{Cont_Trash.ART}
+{836}{Cont_Plant.ART}
+{837}{Cont_Altar_Good.ART}
+{838}{Cont_Altar_Neutral.ART}
+{839}{Cont_Altar_Evil.ART}
+{840}{NewTimes16Font.ART}
+{841}{MPIconsFont.ART}
+{842}{MP_KickBanRotWindow.ART}
+{843}{MP_KICK.ART}
+{844}{MP_BAN.ART}
+{845}{BlockedShot.ART}
+{846}{Magic-Tech-Penalty.ART}
+{847}{Arrows_scheme.ART}

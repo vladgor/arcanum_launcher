@@ -1,24 +1,23 @@
-;arcanum launcher [v0.5.9.6]
+п»ї;arcanum launcher [v0.6.0.1]
 ;nothing is reserved, you can do with this shit everything you want
 
+IncludeFile("libraries\droopylib\droopy.pb")
+
 ;thanks to
-;     http://kriss80858.deviantart.com/art/Arcanum-logo-1-395035946 — for arcanum logo used in repository
-;     http://www.terra-arcanum.com/phpBB/viewtopic.php?t=15208      — for description of command line arguments
+;     http://kriss80858.deviantart.com/art/Arcanum-logo-1-395035946 вЂ” for arcanum logo used in repository
+;     http://www.terra-arcanum.com/phpBB/viewtopic.php?t=15208      вЂ” for description of command line arguments
 
 ; 0.6.0.0
 ; added:
-; — launcher now can update itself (watch for new included file "updateLauncher.pb"
+; вЂ” launcher now can update itself (watch for new included file "updateLauncher.pb"
 ;   and new line in config file "checkForUpdate" (1 - on, 0 - off))
-; — launcher now can store old debug-files in launcher\logs\ directory 
+; вЂ” launcher now can store old debug-files in launcher\logs\ directory 
 ;   (watch for new "storeLogs" config-line (1 - on, 0 - off))
-; — added launcher-specific -lwindowed command-line argument
-; — launcherDebug.txt is launcher\debug.txt from now
-; — launcherConfig.cfg is launcher.cfg from now
+; вЂ” added launcher-specific -lwindowed command-line argument
+; вЂ” launcherDebug.txt is launcher\debug.txt from now
+; вЂ” launcherConfig.cfg is launcher.cfg from now
 
-; TODO — what's new при обновлении лончера
-;      — не сохраняет ключи для мода, если нет конфигурационного файла
-
-
+Debug "С…РµСЂ"
 ;and yeah, sorry for shitty code
 
 Enumeration 0 Step -1
@@ -37,30 +36,30 @@ EndEnumeration
 
 IncludeFile "config.pb"
 
-Global lVersion.s = "0.6.0.0"
+Global lVersion.s = "0.6.0.1"
 
 Global lProcessPid = 0 ;will be declared later
 Global lProcessName.s = GetFilePart(ProgramFilename())
 Global lDirectory.s = GetPathPart(ProgramFilename())
 
-;if launcher was already started, close it
-ExamineProcesses()
 
-Repeat
-  process = NextProcess()
-  If GetProcessName() = lProcessName
-    If GetPathPart(GetProcessFileName()) = lDirectory
-      If lProcessPid = 0
-        lProcessPid = GetProcessPID()
-      Else
-        If GetProcessPID() <> lProcessPid
-          MessageRequester("Error", localMsgCantRunSeveralCopies, #MB_ICONERROR)
-          End
-        EndIf
-      EndIf
-    EndIf
-  EndIf
-Until process = 0
+; ExamineProcesses()
+; 
+; Repeat
+;   process = NextProcess()
+;   If GetProcessName() = lProcessName
+;     If GetPathPart(GetProcessFileName()) = lDirectory
+;       If lProcessPid = 0
+;         lProcessPid = GetProcessPID()
+;       Else
+;         If GetProcessPID() <> lProcessPid
+;           MessageRequester("Error", localMsgCantRunSeveralCopies, #MB_ICONERROR)
+;           End
+;         EndIf
+;       EndIf
+;     EndIf
+;   EndIf
+; Until process = 0
 
 ;checking if launcher was started with any parameter
 ;if it was then launcher should start specified mod
@@ -154,6 +153,8 @@ Enumeration
 EndEnumeration
 ;}
 
+;Structures
+;{
 Structure mod
   name.s
   realName.s ;name for checking for updates
@@ -178,6 +179,7 @@ Structure cache
   http.s
   local.s
 EndStructure
+;}
 
 Global NewList cached.cache()
 
@@ -185,7 +187,7 @@ Global NewList mods.mod()
 
 ;list of folders to replace
 ;is used in activateMod() and deactivateMod() functions
-;!IMPORTANT! — folders from makeModsList() should be added manually (see mkDir() function)
+;!IMPORTANT! АўАЂА” folders from makeModsList() should be added manually (see mkDir() function)
 
 
 Global NewList DirsToRemove.s()
@@ -200,7 +202,7 @@ Global dThread = 0
 
 Global ListIsFilled = #False
 
-
+UseZipPacker()
 InitNetwork()
 
 ;create directory for logs and stuff if it wasn't created yet
@@ -224,6 +226,8 @@ IncludeFile "wndMakeBackup.pb"
 IncludeFile "wndUnbackupMod.pb"
 IncludeFile "updateLauncher.pb"
 
+;if launcher was already started, close it
+runOnlyOneInstance()
 
 ;checking for new version of launcher if checkforupdate is on
 If cfgCheckForUpdate = 1 
@@ -788,7 +792,7 @@ Procedure renameMod(oldName.s, newName.s)
         If RenameFile("mods\" + oldName + "\", "mods\" + newName + "\")
         
           mods()\name = newName
-          SetGadgetItemText(#lstMods, GetGadgetState(#lstMods), newName) ;говнокод
+          SetGadgetItemText(#lstMods, GetGadgetState(#lstMods), newName)
           ProcedureReturn #True
         Else
          ProcedureReturn #L_RENAMEMOD_CANTRENAMEFOLDER
@@ -819,7 +823,6 @@ EndProcedure
 
 
 ;{ GetMod's section
-
   Procedure closeGetModWnd()
     abortDownloading()
     ClearList(mods())
@@ -866,13 +869,12 @@ EndProcedure
     Wend
     
     mods()\desc = text
-
   EndProcedure
   
   ;returns number of available mods
   Procedure fillGetModsList() 
-    text.s = ReadHTTPFile(cfgInfoLink)
-
+    text.s = ReadFromHTTPFile(cfgInfoLink)
+    Debug text
     ;pares file with mod descriptions
     count = CountString(text, Chr(13)) + 1
     skip = #False
@@ -886,11 +888,10 @@ EndProcedure
     Next
     
     While i <= count
-      key.s = StringField(text, i, Chr(13))
+      key.s = StringField(text, i, Chr(10) + Chr(13))
       keyLen = Len(Trim(key))
       
       If beginsWith(key, "[[name]]")
-        
         skip = #False
   
         name.s = Right(Trim(key),KeyLen - 8)
@@ -902,7 +903,7 @@ EndProcedure
         Next
         
         If skip = #False
-          AddGadgetItem(#lstGetModList,-1,name)
+          AddGadgetItem(#lstGetModList, -1, name)
           AddElement(mods())
           output = output + 1
           mods()\name = name
@@ -911,7 +912,7 @@ EndProcedure
         
       ElseIf beginsWith(key,"[[version]]")
         If skip = #False
-          mods()\version = Right(Trim(key),KeyLen - 11)
+          mods()\version = Right(Trim(key), KeyLen - 11)
         EndIf
       ElseIf beginsWith(key, "[[what's new]]")
         
@@ -922,7 +923,7 @@ EndProcedure
         
       ElseIf beginsWith(key,"[[size]]")
         If skip = #False
-          mods()\size = ValD(Right(Trim(key),KeyLen - 8))
+          mods()\size = ValD(Right(Trim(key), KeyLen - 8))
         EndIf  
         
       ElseIf key <> ""
@@ -938,7 +939,7 @@ EndProcedure
       GetImagesToCache(mods()\desc)
       t.s = mods()\desc
       t = ReplaceString(t, "%size%", Str(mods()\size))
-      t = ReplaceString(t, "%size_kb%", Str(Round(mods()\size/1024,#PB_Round_Nearest)))
+      t = ReplaceString(t, "%size_kb%", Str(Round(mods()\size/1024, #PB_Round_Nearest)))
       t = ReplaceString(t, "%size_mb%", StrF(mods()\size/1024/1024, 2))
       t = ReplaceString(t, "%version%", mods()\version)
       mods()\desc = t
@@ -979,7 +980,7 @@ EndProcedure
       If mods()\size = FileSize(tempName)
         SetGadgetText(#lblDownloading, ReplaceString(localLblGetModStatusUnzipping, "%mod", mod, #PB_String_NoCase))
         
-        pathToUnzip.s = lDirectory + "mods\" + mod + "\"
+        pathToUnzip.s = "mods\" + mod + "\"
         
         If CreateDirectory(pathToUnzip)
           d("Directory " + Chr(34) + pathToUnzip + Chr(34) + " was created")
@@ -989,7 +990,7 @@ EndProcedure
         
         d("Unzipping file...")
         
-        If PureZIP_ExtractFiles(tempName,"*.*", pathToUnzip,#True) <> #Null
+        If ExtractFilesFromZip(tempName, pathToUnzip) <> #Null
           d("Success!")
           SetGadgetText(#lblDownloading, ReplaceString(localLblGetModStatusInstalled, "%mod", mod, #PB_String_NoCase))
         
@@ -1035,19 +1036,15 @@ EndProcedure
       HideGadget(#pbDownloading, 1)
       HideGadget(#btnAbortDownloading, 1)
     Else
-      ;TODO: окно не закрывается, надо будет пофиксить
-      ;HideWindow(#wndGetMod, 1)
       closeGetModWnd()
       
       ForegroundWindowSet(WindowID(#wnd))
     EndIf
     
     ProcedureReturn #True
-    
   EndProcedure 
   
   Procedure backupMod(mod.s, backupName.s, description.s)
-    
     archiveName.s = "mods\!backups\" + mods()\realName + "\" + backupName + ".zip"
     modPath.s = "mods\" + mod + "\"
     
@@ -1063,20 +1060,20 @@ EndProcedure
       CreateDirectory("mods\!backups\" + mods()\realName)
     EndIf
     
-    PureZIP_Archive_Create(archiveName, #APPEND_STATUS_CREATE)
+    CreatePack(0, archiveName)
     
-    If FileSize(modPath + "data\Players\") = -2 ; копируем сейвы сетевых персонажей
-      PureZIP_AddFiles(archiveName,modPath + "data\Players\" + "*.*",#PureZIP_StorePathAbsolute, #PureZIP_RecursiveZeroDirs)
+    If FileSize(modPath + "data\Players\") = -2 
+      AddFilesToZip(0, modPath + "data\Players\", "*.*")
     EndIf
     
-    If ExamineDirectory(0, modPath + "modules\", "*.*") ; копируем сейвы сингловых персонажей
+    If ExamineDirectory(0, modPath + "modules\", "*.*")
       While NextDirectoryEntry(0)
         If DirectoryEntryType(0) = #PB_DirectoryEntry_Directory
           If beginsWith(DirectoryEntryName(0), ".") = 0
             saveFolderName.s = modPath + "modules\" + DirectoryEntryName(0) + "\save\"
             ;Debug saveFolderName
             If FileSize(saveFolderName) = -2
-              PureZIP_AddFiles(archiveName,saveFolderName + "*.*",#PureZIP_StorePathAbsolute, #PureZIP_RecursiveZeroDirs)
+              AddFilesToZip(0, saveFolderName, "*.*")
             EndIf
           EndIf
         EndIf
@@ -1084,7 +1081,7 @@ EndProcedure
       FinishDirectory(0)
     EndIf
   
-    PureZIP_Archive_Close()
+    ClosePack(0)
     
     setFileContent(GetPathPart(archiveName) + backupName + ".txt", description)
     
@@ -1092,16 +1089,15 @@ EndProcedure
   EndProcedure
   
   Procedure unbackupMod(mod.s, backupName.s)
-
     temp.s = GetTemporaryDirectory() + "ArcanumLauncher\"
     
-    If PureZIP_ExtractFiles("mods\!backups\" + mods()\realName + "\" + backupName + ".zip","*.*", GetTemporaryDirectory() + "ArcanumLauncher\", #True) = #Null
+    If ExtractFilesFromZip("mods\!backups\" + mods()\realName + "\" + backupName + ".zip", GetTemporaryDirectory() + "ArcanumLauncher\") = #Null
       ProcedureReturn #L_UNBACKUPMOD_CANTUNZIP  
     EndIf
     
     modPath.s = temp + "mods\" + mod + "\"
     
-    If FileSize(modPath + "data\Players\") = -2 ; копируем сейвы сетевых персонажей
+    If FileSize(modPath + "data\Players\") = -2
       If FileSize("mods\" + mod + "\data\Players\")
         DeleteDirectory("mods\" + mod + "\data\Players\", "*.*", #PB_FileSystem_Recursive | #PB_FileSystem_Force)
       EndIf
@@ -1113,7 +1109,7 @@ EndProcedure
       RenameFile(modPath + "data\Players\", "mods\" + mod + "\data\Players\")
     EndIf
     
-    If ExamineDirectory(0, modPath + "modules\", "*.*") ; копируем сейвы сингловых персонажей
+    If ExamineDirectory(0, modPath + "modules\", "*.*")
       While NextDirectoryEntry(0)
         If DirectoryEntryType(0) = #PB_DirectoryEntry_Directory
           If beginsWith(DirectoryEntryName(0), ".") = 0
@@ -1138,172 +1134,167 @@ EndProcedure
   EndProcedure
   
 ;{ special thread functions
-  
-  Procedure tUpdateMod(*val)
-    
-    mod.s = GetGadgetText(#lstMods)
-    dMod = mod
-    
-    findMod(mod)
-    
-    d("updating " + mod + " from " + mods()\version + " to " + mods()\newversion)
-    d("---")
-    
-    errorText.s = ""
-    
-    tempName.s = GetTemporaryDirectory() + "ArcanumLauncher\" + Str(Random(10000000)) + ".zip"
-    
-    SetGadgetText(#lblDownloading, ReplaceString(localLblUpdateStatusBackuping, "%mod", mod, #PB_String_NoCase))
-    d("Backuping mod...")
-    
-    If backupMod(mod, FormatDate("(%dd.%mm) before updating to " + mods()\newversion, Date()), FormatDate("%dd/%mm/%yyyy, %hh:%ii", Date()) + Chr(13) + Chr(10) + LSet("",10, "-") + Chr(13) + Chr(10) + "Updating to new version (from " + mods()\version + " to " + mods()\newversion + ")")
-      d("Backuped!")
-      
-      SetGadgetText(#lblDownloading, ReplaceString(localLblUpdateStatusPreparing, "%mod", mod, #PB_String_NoCase))
-      d("Downloading...")
-      
-      If UrlToFileWithProgress(tempName, mods()\link, mods()\size)
-        SetGadgetText(#lblDownloading, ReplaceString(localLblUpdateStatusDeleting, "%mod", mod, #PB_String_NoCase))
-        d("Downloaded!")
+      Procedure tUpdateMod(*val)
         
-        d("Deleting old mod's folder...")
+        mod.s = GetGadgetText(#lstMods)
+        dMod = mod
         
-        If DeleteDirectory("mods\" + mod, "*.*", #PB_FileSystem_Force | #PB_FileSystem_Recursive)
-          SetGadgetText(#lblDownloading, ReplaceString(localLblUpdateStatusUnzipping, "%mod", mod, #PB_String_NoCase))
-          d("Deleted!")
+        findMod(mod)
+        
+        d("updating " + mod + " from " + mods()\version + " to " + mods()\newversion)
+        d("---")
+        
+        errorText.s = ""
+        
+        tempName.s = GetTemporaryDirectory() + "ArcanumLauncher\" + Str(Random(10000000)) + ".zip"
+        
+        SetGadgetText(#lblDownloading, ReplaceString(localLblUpdateStatusBackuping, "%mod", mod, #PB_String_NoCase))
+        d("Backuping mod...")
+        
+        If backupMod(mod, FormatDate("(%dd.%mm) before updating to " + mods()\newversion, Date()), FormatDate("%dd/%mm/%yyyy, %hh:%ii", Date()) + Chr(13) + Chr(10) + LSet("",10, "-") + Chr(13) + Chr(10) + "Updating to new version (from " + mods()\version + " to " + mods()\newversion + ")")
+          d("Backuped!")
           
-          pathToUnzip.s = lDirectory + "mods\" + mod + "\"
+          SetGadgetText(#lblDownloading, ReplaceString(localLblUpdateStatusPreparing, "%mod", mod, #PB_String_NoCase))
+          d("Downloading...")
           
-          d("Unzipping mod...")
-          
-          If PureZIP_ExtractFiles(tempName,"*.*", pathToUnzip, #True) <> #Null
-            d("Unzipped!")
-            SetGadgetText(#lblDownloading, ReplaceString(localLblUpdateStatusUnbackuping, "%mod", mod, #PB_String_NoCase))
+          If UrlToFileWithProgress(tempName, mods()\link, mods()\size)
+            SetGadgetText(#lblDownloading, ReplaceString(localLblUpdateStatusDeleting, "%mod", mod, #PB_String_NoCase))
+            d("Downloaded!")
             
-            d("Backuping old saves...")
+            d("Deleting old mod's folder...")
             
-            If unbackupMod(mod, FormatDate("(%dd.%mm) before updating to " + mods()\newversion, Date()))
-              SetGadgetText(#lblDownloading, ReplaceString(localLblUpdateStatusOk, "%mod", mod, #PB_String_NoCase))
-              d("Backuped!")
-              d("Mod has been successfully updated")
-              mods()\version = mods()\newversion
+            If DeleteDirectory("mods\" + mod, "*.*", #PB_FileSystem_Force | #PB_FileSystem_Recursive)
+              SetGadgetText(#lblDownloading, ReplaceString(localLblUpdateStatusUnzipping, "%mod", mod, #PB_String_NoCase))
+              d("Deleted!")
               
+              pathToUnzip.s = lDirectory + "mods\" + mod + "\"
               
-              SetGadgetItemText(#lstMods, GetGadgetState(#lstMods), mod  + Chr(10) + mods()\newversion)
+              d("Unzipping mod...")
               
-              Delay(1500)
-              
-              HideWindow(#wndGetMod, 1)
-              closeGetModWnd()
-              
-              DisableWindow(#wnd, 0)
-              ForegroundWindowSet(WindowID(#wnd))
-              
-              dIndent(3)
-              
-              FlushFileBuffers(0)
-              
-              ProcedureReturn #True
-            Else
-              d("Can't unbackup mod")
-              errorText = ReplaceString(localLblUpdateStatusUnbackupingError, "%mod", mod, #PB_String_NoCase)
+              If ExtractFilesFromZip(tempName, pathToUnzip) <> #Null
+                d("Unzipped!")
+                SetGadgetText(#lblDownloading, ReplaceString(localLblUpdateStatusUnbackuping, "%mod", mod, #PB_String_NoCase))
+                
+                d("Backuping old saves...")
+                
+                If unbackupMod(mod, FormatDate("(%dd.%mm) before updating to " + mods()\newversion, Date()))
+                  SetGadgetText(#lblDownloading, ReplaceString(localLblUpdateStatusOk, "%mod", mod, #PB_String_NoCase))
+                  d("Backuped!")
+                  d("Mod has been successfully updated")
+                  mods()\version = mods()\newversion
+                  
+                  
+                  SetGadgetItemText(#lstMods, GetGadgetState(#lstMods), mod  + Chr(10) + mods()\newversion)
+                  
+                  Delay(1500)
+                  
+                  HideWindow(#wndGetMod, 1)
+                  closeGetModWnd()
+                  
+                  DisableWindow(#wnd, 0)
+                  ForegroundWindowSet(WindowID(#wnd))
+                  
+                  dIndent(3)
+                  
+                  FlushFileBuffers(0)
+                  
+                  ProcedureReturn #True
+                Else
+                  d("Can't unbackup mod")
+                  errorText = ReplaceString(localLblUpdateStatusUnbackupingError, "%mod", mod, #PB_String_NoCase)
+                EndIf
+              Else ;if not extracted
+                d("Can't unzip mod")
+                errorText = ReplaceString(localLblUpdateStatusUnzippingError, "%mod", mod, #PB_String_NoCase)
+              EndIf
+            Else ;if not deleted
+              d("Can't delete mod's directory")
+              errorText = ReplaceString(localLblUpdateStatusDeletingError, "%mod", mod, #PB_String_NoCase)
             EndIf
-          Else ;if not extracted
-            d("Can't unzip mod")
-            errorText = ReplaceString(localLblUpdateStatusUnzippingError, "%mod", mod, #PB_String_NoCase)
+            
+          Else ;if not downloaded
+            d("Can't download mod")
+            errorText = ReplaceString(localLblUpdateStatusDownloadingError, "%mod", mod, #PB_String_NoCase)
           EndIf
-        Else ;if not deleted
-          d("Can't delete mod's directory")
-          errorText = ReplaceString(localLblUpdateStatusDeletingError, "%mod", mod, #PB_String_NoCase)
+        Else ;if not backuped
+          d("Can't backup mod's files")
+          errorText = ReplaceString(localLblUpdateStatusBackupingError, "%mod", mod, #PB_String_NoCase)
         EndIf
         
-      Else ;if not downloaded
-        d("Can't download mod")
-        errorText = ReplaceString(localLblUpdateStatusDownloadingError, "%mod", mod, #PB_String_NoCase)
-      EndIf
-    Else ;if not backuped
-      d("Can't backup mod's files")
-      errorText = ReplaceString(localLblUpdateStatusBackupingError, "%mod", mod, #PB_String_NoCase)
-    EndIf
-    
-    SetGadgetText(#lblDownloading, errorText + ". " + localLblUpdateStatusClosingWindow)
-    Delay(2000)
-    
-    HideWindow(#wndGetMod, 1)
-    closeGetModWnd()
-              
-    DisableWindow(#wnd, 0)
-    ForegroundWindowSet(WindowID(#wnd))
-    
-    dIndent(3)
-    
-    FlushFileBuffers(0)
-    
-    ProcedureReturn #False
-    
-  EndProcedure
-  
-  Procedure tBackupMod(*val)
-   SetGadgetText(#lblMakeBackupStatus, localLblBackupStatus)
-   
-   result = backupMod(GetGadgetText(#lstMods), GetGadgetText(#txtMakeBackupName), GetGadgetText(#txtMakeBackupDescription))
-   
-   If result
-     SetGadgetColor(#lblMakeBackupStatus, #PB_Gadget_FrontColor, RGB(63,152,51))
-     SetGadgetText(#lblMakeBackupStatus, localLblBackupStatusOk)
-     
-     Delay(1000)
-     HideWindow(#wndMakeBackup, 1)
-     CloseWindow(#wndMakeBackup)
-     
-     DisableWindow(#wnd, 0)
-     ForegroundWindowSet(WindowID(#wnd)) ; потому что не работает стандартное SetActiveWindow()
-     
-   ElseIf result = #L_BACKUPMOD_CANTCREATEFILE
-     SetGadgetColor(#lblMakeBackupStatus, #PB_Gadget_FrontColor, RGB(206,23,23))
-     SetGadgetText(#lblMakeBackupStatus, localLblBackupStatusError)
-     Delay(1500)
-     SetGadgetText(#lblMakeBackupStatus, "")
-     DisableGadget(#btnMakeBackup, 0)
-   EndIf
-   
-  
-  EndProcedure
-  
-  Procedure tUnbackupMod(*val)
-    
-    SetGadgetText(#lblMakeBackupStatus, localLblUnbackupStatus)
-    
-    result = unbackupMod(GetGadgetText(#lstMods), GetGadgetText(#lstUnbackupMod))
-    
-    If result
-      SetGadgetColor(#lblUnbackupModStatus, #PB_Gadget_FrontColor, RGB(63,152,51))
-      SetGadgetText(#lblUnbackupModStatus, localLblUnbackupStatusOk)
-     
-      Delay(1000)
-      ClearList(Backups())
-      HideWindow(#wndUnbackupMod, 1)
-      CloseWindow(#wndUnbackupMod)
-      ClearList(Backups())
-      DisableWindow(#wnd, 0)
-      ForegroundWindowSet(WindowID(#wnd))
-    Else
-      SetGadgetColor(#lblUnbackupModStatus, #PB_Gadget_FrontColor, RGB(206,23,23))
+        SetGadgetText(#lblDownloading, errorText + ". " + localLblUpdateStatusClosingWindow)
+        Delay(2000)
+        
+        HideWindow(#wndGetMod, 1)
+        closeGetModWnd()
+                  
+        DisableWindow(#wnd, 0)
+        ForegroundWindowSet(WindowID(#wnd))
+        
+        dIndent(3)
+        
+        FlushFileBuffers(0)
+        
+        ProcedureReturn #False
+        
+      EndProcedure
       
-      If result = #L_UNBACKUPMOD_CANTUNZIP
-        SetGadgetText(#lblUnbackupModStatus, localLblUnbackupStatusCantUnzip)
-      Else
-        SetGadgetText(#lblUnbackupModStatus, localLblUnbackupStatusUnspec)
-      EndIf
+      Procedure tBackupMod(*val)
+       SetGadgetText(#lblMakeBackupStatus, localLblBackupStatus)
+       
+       result = backupMod(GetGadgetText(#lstMods), GetGadgetText(#txtMakeBackupName), GetGadgetText(#txtMakeBackupDescription))
+       
+       If result
+         SetGadgetColor(#lblMakeBackupStatus, #PB_Gadget_FrontColor, RGB(63,152,51))
+         SetGadgetText(#lblMakeBackupStatus, localLblBackupStatusOk)
+         
+         Delay(1000)
+         HideWindow(#wndMakeBackup, 1)
+         CloseWindow(#wndMakeBackup)
+         
+         DisableWindow(#wnd, 0)
+         ForegroundWindowSet(WindowID(#wnd))
+         
+       ElseIf result = #L_BACKUPMOD_CANTCREATEFILE
+         SetGadgetColor(#lblMakeBackupStatus, #PB_Gadget_FrontColor, RGB(206,23,23))
+         SetGadgetText(#lblMakeBackupStatus, localLblBackupStatusError)
+         Delay(1500)
+         SetGadgetText(#lblMakeBackupStatus, "")
+         DisableGadget(#btnMakeBackup, 0)
+       EndIf
+      EndProcedure
       
-      
-      Delay(1500)
-      DisableGadget(#btnUnbackupMod, 0)
-    EndIf
-    
-  EndProcedure  
-     
-  Procedure tCheckConnection(*value)
+      Procedure tUnbackupMod(*val)
+        SetGadgetText(#lblMakeBackupStatus, localLblUnbackupStatus)
+        
+        result = unbackupMod(GetGadgetText(#lstMods), GetGadgetText(#lstUnbackupMod))
+        
+        If result
+          SetGadgetColor(#lblUnbackupModStatus, #PB_Gadget_FrontColor, RGB(63,152,51))
+          SetGadgetText(#lblUnbackupModStatus, localLblUnbackupStatusOk)
+         
+          Delay(1000)
+          ClearList(Backups())
+          HideWindow(#wndUnbackupMod, 1)
+          CloseWindow(#wndUnbackupMod)
+          ClearList(Backups())
+          DisableWindow(#wnd, 0)
+          ForegroundWindowSet(WindowID(#wnd))
+        Else
+          SetGadgetColor(#lblUnbackupModStatus, #PB_Gadget_FrontColor, RGB(206,23,23))
+          
+          If result = #L_UNBACKUPMOD_CANTUNZIP
+            SetGadgetText(#lblUnbackupModStatus, localLblUnbackupStatusCantUnzip)
+          Else
+            SetGadgetText(#lblUnbackupModStatus, localLblUnbackupStatusUnspec)
+          EndIf
+          
+          
+          Delay(1500)
+          DisableGadget(#btnUnbackupMod, 0)
+        EndIf
+      EndProcedure  
+         
+      Procedure tCheckConnection(*value)
     If (cfgInfoTestHost <> "") And (cfgInfoTestPort <> 0)
       If checkConnection(cfgInfoTestHost, cfgInfoTestPort)
         SetGadgetText(#btnGetMod, localBtnGetMoreMods)
@@ -1312,7 +1303,7 @@ EndProcedure
         SetGadgetText(#btnGetMod, localBtnCantConnect)
       EndIf
     Else
-      If readHttpFile(cfgInfoTestFile) <> ""
+      If readFromHttpFile(cfgInfoTestFile) <> ""
         SetGadgetText(#btnGetMod, localBtnGetMoreMods)
         DisableGadget(#btnGetMod, 0)
       Else
@@ -1344,7 +1335,6 @@ EndProcedure
       
       dThread = CreateThread(@downloadAndUnzipMod(), 0)
     EndIf
-    
   EndProcedure
 
   Procedure onUrlChanged(Gadget, Url.s) 
@@ -1356,7 +1346,6 @@ EndProcedure
       RunProgram(Right(url, Len(url) - 4))
     EndIf 
     
-    
     ProcedureReturn #False
   EndProcedure 
 
@@ -1364,19 +1353,19 @@ EndProcedure
     If OpenWindow(#wndGetMod, 222, 231, 764, 480, localWndGetModTitle + ", ArcanumLauncher " + lVersion,  #PB_Window_SystemMenu | #PB_Window_ScreenCentered | #PB_Window_Invisible | #PB_Window_TitleBar, WindowID(#wnd))
       ListViewGadget(#lstGetModList, 5, 5, 220, 470)
       
-      WebGadget(#wbGetMod, 230, 5, 530, 470, "about:blank", #PB_Web_Mozilla)
+      WebGadget(#wbGetMod, 230, 5, 530, 470, "about:blank")
       SetGadgetAttribute(#wbGetMod, #PB_Web_NavigationCallback, @onUrlChanged())
       
-      TextGadget(#lblDownloading,220,200,350,20,"Downloading...")
-      ProgressBarGadget(#pbDownloading,220,220,250,25,0,100, #PB_ProgressBar_Smooth)
-      ButtonGadget(#btnAbortDownloading,480,220,100,25, localBtnAbortDownloading)
+      TextGadget(#lblDownloading, 220, 200, 350, 20,"Downloading...")
+      ProgressBarGadget(#pbDownloading, 220, 220, 250, 25, 0, 100, #PB_ProgressBar_Smooth)
+      ButtonGadget(#btnAbortDownloading, 480, 220, 100, 25, localBtnAbortDownloading)
       
       If isUpdate
-        HideGadget(#lstGetModList,1)
-        HideGadget(#wbGetMod,1)
+        HideGadget(#lstGetModList, 1)
+        HideGadget(#wbGetMod, 1)
       Else
         If Not(fillGetModsList())
-          MessageRequester("",localMsgNoMoreModsAreAvailable, #MB_ICONINFORMATION)
+          MessageRequester("", localMsgNoMoreModsAreAvailable, #MB_ICONINFORMATION)
           closeGetModWnd() 
           DisableWindow(#wnd, 0)
           
@@ -1399,7 +1388,7 @@ EndProcedure
   EndProcedure
   
   Procedure checkModForUpdates(mod.s)
-    text.s = ReadHTTPFile(cfgInfoLink)
+    text.s = ReadFromHTTPFile(cfgInfoLink)
     version.s = ""
     
     findMod(mod)
@@ -1415,7 +1404,7 @@ EndProcedure
     i = 1
     
     While i <= count
-      key.s = Trim(StringField(text, i, Chr(13)))
+      key.s = Trim(StringField(text, i, Chr(10) + Chr(13)))
       keyLen = Len(Trim(key))
       
       If key = "[[name]]" + mod
@@ -1468,9 +1457,8 @@ EndProcedure
   EndProcedure
 ;}
 
-
 Procedure openDescriptionWnd(mod.s)
-  If OpenWindow(#wndDescription, 374, 199, 900, 550, mod + " — " + localWndDescriptionTitle + ", ArcanumLauncher " + lVersion,  #PB_Window_SystemMenu | #PB_Window_MinimizeGadget | #PB_Window_MaximizeGadget | #PB_Window_SizeGadget | #PB_Window_TitleBar | #PB_Window_ScreenCentered, WindowID(#wnd))
+  If OpenWindow(#wndDescription, 374, 199, 900, 550, mod + " вЂ” " + localWndDescriptionTitle + ", ArcanumLauncher " + lVersion,  #PB_Window_SystemMenu | #PB_Window_MinimizeGadget | #PB_Window_MaximizeGadget | #PB_Window_SizeGadget | #PB_Window_TitleBar | #PB_Window_ScreenCentered, WindowID(#wnd))
     WebGadget(#wbDescription,0,0,650,550, lDirectory + "mods\" + mod + "\modConfig\modDescription.html")
     SetActiveGadget(#wbDescription)
   EndIf
@@ -1506,7 +1494,7 @@ Else
     EndIf
   Next
   
-  ;if mod wasn't find
+  ;if mod wasn't found
   MessageRequester("",localMsgCantFindSpecMod,#MB_ICONERROR)
   End 
 EndIf
@@ -1561,7 +1549,7 @@ Repeat
           name.s = GetGadgetText(#lstGetModList)
           
           findMod(name)
-          SetGadgetItemText(#wbGetMod,#PB_Web_HtmlCode,mods()\desc)
+          SetGadgetItemText(#wbGetMod, #PB_Web_HtmlCode, mods()\desc)
         EndIf
         
       Case #lstUnbackupMod
@@ -1676,7 +1664,7 @@ Repeat
         DisableWindow(#wnd, 1)
         
       Case #menuRenameMod
-        newName.s = InputRequester(GetGadgetText(#lstmods) + " — " + localWndChangeModNameTitle + ", ArcanumLauncher " + lVersion, localTxtRenameMod,"")
+        newName.s = InputRequester(GetGadgetText(#lstmods) + " вЂ” " + localWndChangeModNameTitle + ", ArcanumLauncher " + lVersion, localTxtRenameMod,"")
         oldName.s = GetGadgetText(#lstMods)
         
         result = renameMod(oldName, newName)
@@ -1737,14 +1725,14 @@ If activatedMod <> ""
 EndIf
 ;}
 ; IDE Options = PureBasic 5.31 (Windows - x86)
-; CursorPosition = 7
-; FirstLine = 514
-; Folding = FgAIA9
+; CursorPosition = 11
+; FirstLine = 11
+; Folding = ------
+; EnableUnicode
 ; EnableThread
 ; EnableXP
 ; UseIcon = ico\icon.ico
-; Executable = C:\Dropbox\РђСЂРєР°РЅСѓРј\arcanum launcher\0.6.0.0\release\launcher.exe
-; SubSystem = UserLibThreadSafe
-; CurrentDirectory = C:\Documents and Settings\vladgor\Р Р°Р±РѕС‡РёР№ СЃС‚РѕР»\
-; EnableCompileCount = 1086
-; EnableBuildCount = 469
+; Executable = C:\Users\РђРґРјРёРЅРёСЃС‚СЂР°С‚РѕСЂ\Desktop\111\launcher.exe
+; EnablePurifier
+; EnableCompileCount = 1169
+; EnableBuildCount = 491
